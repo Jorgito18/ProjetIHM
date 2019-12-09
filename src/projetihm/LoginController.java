@@ -10,45 +10,38 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class LoginController {
-    public static final String CLASEMENTS = "clasemments";
-    public static final String MATCH_DIRECT = "direct";
-
-    @FXML private Button btnOpenPompiers;
+    public static final String CLASEMENTS = "Classements.fxml";
+    public static final String MATCH_DIRECT = "Match.fxml";
 
     @FXML
     public void openAsClassement() {
-        launchLogIn(CLASEMENTS);
+        redirectFromLogin(CLASEMENTS);
     }
 
     @FXML
     public void openAsDirect() {
-        launchLogIn(MATCH_DIRECT);
+        redirectFromLogin(MATCH_DIRECT);
     }
 
     @FXML
-    public void launchLogIn(String departement) {
+    public void redirectFromLogin(String windowPath) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/projetihm/FXMLDocument.fxml"));
+            fxmlLoader.setLocation(getClass().getResource(windowPath));
             fxmlLoader.load();
-
-            MatchController controller = fxmlLoader.getController();
 
             Parent parent = fxmlLoader.getRoot();
             Stage stage = new Stage(StageStyle.DECORATED);
-            Stage loginStage = (Stage) btnOpenPompiers.getScene().getWindow();
 
-            stage.setTitle("BCMS Application");
+            stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
             stage.setResizable(false);
 
             stage.show();
-            loginStage.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
