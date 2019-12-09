@@ -6,7 +6,6 @@ package projetihm.backend;
  * and open the template in the editor.
  */
 
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -59,7 +58,7 @@ public class ClassementsController implements Initializable {
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);
         retrieveDataStarligue(STARLIGUE_DRIVER_PATH);
     }
- 
+
     public void retrieveDataProligue(String driverPath) {
         ObservableList<ProligueTableModel> list = FXCollections.observableArrayList();
 

@@ -109,7 +109,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="demarrer" layoutX="475.0" layoutY="16.0" mnemonicParsing="false" onAction="#chronoDemarrer" style="-fx-background-color: #12e02a;" text="Démarrer">
+            <Button layoutX="475.0" layoutY="16.0" mnemonicParsing="false" onAction="#chronoDemarrer" style="-fx-background-color: #12e02a;" text="Démarrer">
                <font>
                   <Font size="14.0" />
                </font>

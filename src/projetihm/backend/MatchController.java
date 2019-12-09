@@ -6,13 +6,26 @@
 package projetihm.backend;
 
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 
 /**
  *
@@ -30,16 +43,32 @@ public class MatchController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }
+    
     @FXML
-    public void chronoDemarrer() throws InterruptedException{
-        int secondes;
-        int minutes;
-        for(minutes=0; minutes<60; minutes++){ 
-            minute.setText(Integer.toString(minutes));
-            for(secondes=0; secondes<60; secondes++){
-                seconde.setText(Integer.toString(secondes));
-                TimeUnit.SECONDS.sleep(1);
+    public void chronoDemarrer() {
+        final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleAtFixedRate(new Runnable() {
+        @Override
+        public void run() {
+                for (int i = 0; i <= 60; i++) {
+                    try {
+                        Thread.sleep(1000);
+                        incrementMinutes(i);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MatchController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
-        }
-      }
+        }, 0, 1, TimeUnit.SECONDS);
+    }
+
+    private void incrementMinutes(int i) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                minute.setText(String.valueOf(i));
+            }
+        });
+    }
+    
 }
