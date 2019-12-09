@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package projetihm.backend;
 
 import java.net.URL;
@@ -32,18 +37,16 @@ public class MatchController implements Initializable {
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
-                int j =0;
-                for (int i = 0; i < 60; i++) {
-                    try {
-                        Thread.sleep(1000);
-                        incrementSecondes(i);
-                        if(i == 59){
-                            j++;
-                            incrementMinutes(j);    
+                for (int j = 1; j < 60; j++) {
+                    for (int i = 0; i <= 60; i++) {
+                        try {
+                           Thread.sleep(1000);
+                           incrementSecondes(i);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(MatchController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(MatchController.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    incrementMinutes(j); 
                 }
             }
         }, 0, 1, TimeUnit.SECONDS);
