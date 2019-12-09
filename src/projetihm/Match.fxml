@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -17,7 +16,7 @@
   <children>
     <VBox fx:id="sideMenu" prefHeight="683.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <Pane prefHeight="764.0" prefWidth="51.0">
+        <Pane prefHeight="797.0" prefWidth="51.0">
           <children>
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -29,7 +28,7 @@
                 <Image url="@images/parametresImg.png" />
               </image>
             </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="11.0" layoutY="747.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="744.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/help_image.png" />
                      </image>
@@ -39,115 +38,49 @@
       </children>
     </VBox>
     <Separator layoutX="69.0" layoutY="51.0" prefWidth="1129.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="5.0" />
-    <VBox layoutY="69.0" prefHeight="72.0" prefWidth="189.0" AnchorPane.leftAnchor="547.0" AnchorPane.rightAnchor="484.0" />
-    <VBox layoutX="1017.0" layoutY="69.0" prefHeight="72.0" prefWidth="236.0" AnchorPane.leftAnchor="1017.0" AnchorPane.rightAnchor="5.0">
+    <VBox layoutX="64.0" layoutY="69.0" prefHeight="70.0" prefWidth="1188.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
       <children>
-        <Pane prefHeight="140.0" prefWidth="200.0" style="-fx-background-color: #e91f26;" />
-        <Pane prefHeight="200.0" prefWidth="236.0" style="-fx-background-color: #FFFFFF">
+        <Pane prefHeight="140.0" prefWidth="300.0" style="-fx-background-color: #204ba0;" />
+        <Pane prefHeight="200.0" prefWidth="1133.0" style="-fx-background-color: #FFFFFF">
           <children>
-            <Label layoutX="97.0" layoutY="9.0" minHeight="21.0" prefHeight="49.0" prefWidth="103.0" text="-1 | -1">
-              <font>
-                <Font size="34.0" />
-              </font>
-            </Label>
-            <Label layoutX="3.0" layoutY="0.0" text=" Exclusions">
-                     <font>
-                <Font size="14.0" fx:id="x1" />
-                     </font></Label>
-          </children>
-        </Pane>
-      </children>
-    </VBox>
-    <VBox layoutY="69.0" prefHeight="72.0" prefWidth="189.0" AnchorPane.leftAnchor="307.5" AnchorPane.rightAnchor="723.5" />
-    <TabPane layoutX="1017.0" layoutY="192.0" prefHeight="602.0" prefWidth="236.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1017.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="192.0">
-      <tabs>
-        <Tab text="   Local   ">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <TableView layoutX="0.0" layoutY="0.0" prefHeight="534.0" prefWidth="236.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0">
-                  <columns>
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="47.0" text="N °" />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="188.0" text="Nom" />
-                  </columns>
-                </TableView>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="   Visitant  ">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <TableView layoutX="0.0" layoutY="0.0" prefHeight="544.0" prefWidth="237.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="18.0">
-                  <columns>
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="36.0" text="N °" />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="200.0" text="Nom" />
-                  </columns>
-                </TableView>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-            <Tab text="   Techniques   ">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="533.0" prefWidth="236.0">
-                     <children>
-                        <TableView layoutY="-1.0" prefHeight="545.0" prefWidth="236.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
-                          <columns>
-                            <TableColumn prefWidth="95.0" text="Poste" />
-                            <TableColumn prefWidth="140.0" text="Nom" />
-                          </columns>
-                        </TableView>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-      </tabs>
-    </TabPane>
-    <VBox layoutX="64.0" layoutY="69.0" prefHeight="72.0" prefWidth="941.0" AnchorPane.leftAnchor="64.0">
-      <children>
-        <Pane prefHeight="140.0" prefWidth="200.0" style="-fx-background-color: #204ba0;" />
-        <Pane prefHeight="200.0" prefWidth="934.0" style="-fx-background-color: #FFFFFF">
-          <children>
-            <Label layoutX="421.0" layoutY="5.0" prefHeight="55.0" prefWidth="103.0" text="00:00">
+            <Label layoutX="546.0" layoutY="5.0" prefHeight="56.0" prefWidth="96.0" text="00:00">
                      <font>
                 <Font size="39.0" fx:id="x3" />
                      </font></Label>
-                  <Label layoutX="242.0" layoutY="5.0" text="0">
+                  <Label layoutX="119.0" layoutY="5.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="743.0" layoutY="6.0" prefHeight="56.0" prefWidth="39.0" text="0">
+                  <Label layoutX="1140.0" layoutY="5.0" prefHeight="56.0" prefWidth="21.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="853.0" layoutY="6.0" text="TM">
-                     <font>
-                        <Font size="38.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="159.0" layoutY="18.0" prefHeight="31.0" prefWidth="63.0" text="Local">
+                  <Label layoutX="22.0" layoutY="15.0" prefHeight="31.0" prefWidth="63.0" text="Local">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="639.0" layoutY="18.0" prefHeight="31.0" prefWidth="89.0" text="Visitant">
+                  <Label layoutX="1029.0" layoutY="16.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
                      <font>
                         <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="685.0" layoutY="6.0" text="TM">
+                     <font>
+                        <Font size="39.0" />
                      </font>
                   </Label>
           </children>
         </Pane>
       </children>
     </VBox>
-      <Label layoutX="1017.0" layoutY="154.0" minHeight="21.0" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #FFFFFF;" text=" Compositions" AnchorPane.leftAnchor="1017.0" AnchorPane.rightAnchor="5.0">
+      <Label layoutX="376.0" layoutY="213.0" minHeight="21.0" prefHeight="30.0" prefWidth="314.0" style="-fx-background-color: #FFFFFF;" text=" Local" AnchorPane.leftAnchor="376.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="1016.0" layoutY="151.0" prefHeight="6.0" prefWidth="237.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="1016.0" AnchorPane.rightAnchor="5.0" />
       <Label layoutX="118.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Match en direct">
          <font>
             <Font name="System Bold" size="25.0" />
@@ -158,5 +91,89 @@
             <Image url="@images/lnh-logo_petit.png" />
          </image>
       </ImageView>
+      <Pane layoutX="64.0" layoutY="141.0" prefHeight="56.0" prefWidth="1188.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
+         <children>
+            <Button layoutX="93.0" layoutY="16.0" mnemonicParsing="false" text="But">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="475.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #12e02a;" text="Démarrer">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="561.0" layoutY="16.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="647.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #f2ff00;" text="T.M.">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="1108.0" layoutY="16.0" mnemonicParsing="false" text="But">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="7.0" layoutY="16.0" mnemonicParsing="false" text="Expulsion">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="1023.0" layoutY="16.0" mnemonicParsing="false" text="Expulsion">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="143.0" layoutY="16.0" mnemonicParsing="false" text="-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="1156.0" layoutY="16.0" mnemonicParsing="false" text="-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TableView layoutX="376.0" layoutY="243.0" prefHeight="404.0" prefWidth="314.0">
+        <columns>
+          <TableColumn prefWidth="30.0" text="N º" />
+            <TableColumn prefWidth="38.0" text="Joue" />
+            <TableColumn prefWidth="50.0" text="Carton" />
+            <TableColumn prefWidth="64.0" text="Expulsé" />
+            <TableColumn prefWidth="131.0" text="Nom" />
+        </columns>
+      </TableView>
+      <TableView layoutX="687.0" layoutY="243.0" prefHeight="404.0" prefWidth="314.0">
+        <columns>
+          <TableColumn prefWidth="30.0" text="N º" />
+            <TableColumn prefWidth="33.0" text="Joue" />
+            <TableColumn prefWidth="49.0" text="Carton" />
+            <TableColumn prefWidth="68.0" text="Expulsé" />
+            <TableColumn prefWidth="142.0" text="Nom" />
+        </columns>
+      </TableView>
+      <TableView layoutX="997.0" layoutY="243.0" prefHeight="404.0" prefWidth="255.0">
+        <columns>
+          <TableColumn prefWidth="108.0" text="Poste" />
+            <TableColumn prefWidth="146.0" text="Nom" />
+        </columns>
+      </TableView>
+      <Label layoutX="997.0" layoutY="213.0" minHeight="21.0" prefHeight="30.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="690.0" layoutY="213.0" minHeight="21.0" prefHeight="30.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;" text=" Visitant">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Pane layoutX="376.0" layoutY="210.0" prefHeight="6.0" prefWidth="876.0" style="-fx-background-color: #00a2dd;" />
   </children>
 </AnchorPane>
