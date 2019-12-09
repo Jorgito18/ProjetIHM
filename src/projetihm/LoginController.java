@@ -39,7 +39,7 @@ public class LoginController {
 
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
-            stage.setResizable(false);
+            //stage.setResizable(false);
 
             stage.show();
         } catch (Exception e) {

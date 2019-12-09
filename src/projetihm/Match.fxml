@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.MatchController">
+<AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.MatchController">
   <children>
     <VBox fx:id="sideMenu" prefHeight="683.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -30,7 +29,7 @@
                 <Image url="@images/parametresImg.png" />
               </image>
             </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="714.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="11.0" layoutY="747.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/help_image.png" />
                      </image>
@@ -60,13 +59,13 @@
       </children>
     </VBox>
     <VBox layoutY="69.0" prefHeight="72.0" prefWidth="189.0" AnchorPane.leftAnchor="307.5" AnchorPane.rightAnchor="723.5" />
-    <TabPane layoutX="1017.0" layoutY="179.0" prefHeight="584.0" prefWidth="236.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="1017.0" layoutY="192.0" prefHeight="602.0" prefWidth="236.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1017.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="192.0">
       <tabs>
         <Tab text="   Local   ">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TableView layoutX="0.0" layoutY="0.0" prefHeight="545.0" prefWidth="236.0">
+                <TableView layoutX="0.0" layoutY="0.0" prefHeight="534.0" prefWidth="236.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="18.0">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="47.0" text="N °" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="188.0" text="Nom" />
@@ -80,7 +79,7 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TableView layoutX="0.0" layoutY="0.0" prefHeight="544.0" prefWidth="237.0">
+                <TableView layoutX="0.0" layoutY="0.0" prefHeight="544.0" prefWidth="237.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="18.0">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="36.0" text="N °" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="200.0" text="Nom" />
@@ -94,7 +93,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="533.0" prefWidth="236.0">
                      <children>
-                        <TableView layoutY="-1.0" prefHeight="545.0" prefWidth="236.0">
+                        <TableView layoutY="-1.0" prefHeight="545.0" prefWidth="236.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
                           <columns>
                             <TableColumn prefWidth="95.0" text="Poste" />
                             <TableColumn prefWidth="140.0" text="Nom" />
@@ -105,7 +104,7 @@
             </Tab>
       </tabs>
     </TabPane>
-    <VBox layoutX="64.0" layoutY="69.0" prefHeight="72.0" prefWidth="941.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="253.0">
+    <VBox layoutX="64.0" layoutY="69.0" prefHeight="72.0" prefWidth="941.0" AnchorPane.leftAnchor="64.0">
       <children>
         <Pane prefHeight="140.0" prefWidth="200.0" style="-fx-background-color: #204ba0;" />
         <Pane prefHeight="200.0" prefWidth="934.0" style="-fx-background-color: #FFFFFF">
@@ -143,12 +142,12 @@
         </Pane>
       </children>
     </VBox>
-      <Label layoutX="1017.0" layoutY="154.0" minHeight="21.0" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #FFFFFF;" text=" Compositions">
+      <Label layoutX="1017.0" layoutY="154.0" minHeight="21.0" prefHeight="30.0" prefWidth="236.0" style="-fx-background-color: #FFFFFF;" text=" Compositions" AnchorPane.leftAnchor="1017.0" AnchorPane.rightAnchor="5.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="1016.0" layoutY="151.0" prefHeight="6.0" prefWidth="237.0" style="-fx-background-color: #00a2dd;" />
+      <Pane layoutX="1016.0" layoutY="151.0" prefHeight="6.0" prefWidth="237.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="1016.0" AnchorPane.rightAnchor="5.0" />
       <Label layoutX="118.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Match en direct">
          <font>
             <Font name="System Bold" size="25.0" />
@@ -159,10 +158,5 @@
             <Image url="@images/lnh-logo_petit.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="64.0" layoutY="141.0" prefHeight="611.0" prefWidth="941.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
-      </ScrollPane>
   </children>
 </AnchorPane>

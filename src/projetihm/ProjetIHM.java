@@ -23,6 +23,8 @@ public class ProjetIHM extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Association Française d'Handball");
+        stage.setResizable(false);
         stage.show();
     }
 
