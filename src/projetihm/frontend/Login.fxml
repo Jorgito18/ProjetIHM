@@ -31,11 +31,11 @@
          </font>
       </Label>
       <Separator layoutX="605.0" layoutY="93.0" prefWidth="200.0" />
-      <Button layoutX="522.0" layoutY="159.0" mnemonicParsing="false" onAction="#openAsClassement" prefHeight="45.0" prefWidth="379.0" style="-fx-background-color: #4285F4; -fx-text-fill: white;" text="Classements nationaux">
+      <Button fx:id="classements" layoutX="522.0" layoutY="159.0" mnemonicParsing="false" onAction="#openAsClassement" prefHeight="45.0" prefWidth="379.0" style="-fx-background-color: #4285F4; -fx-text-fill: white;" text="Classements nationaux">
          <font>
             <Font size="21.0" />
          </font></Button>
-      <Button layoutX="522.0" layoutY="293.0" mnemonicParsing="false" onAction="#openAsDirect" prefHeight="45.0" prefWidth="379.0" style="-fx-background-color: #4285F4; -fx-text-fill: white;" text="Match en direct">
+      <Button fx:id="match" layoutX="522.0" layoutY="293.0" mnemonicParsing="false" onAction="#openAsDirect" prefHeight="45.0" prefWidth="379.0" style="-fx-background-color: #4285F4; -fx-text-fill: white;" text="Match en direct">
          <font>
             <Font size="21.0" />
          </font></Button>
