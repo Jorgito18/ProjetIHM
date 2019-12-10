@@ -13,6 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import java.util.concurrent.TimeUnit;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -24,7 +27,7 @@ import javafx.stage.StageStyle;
  * @author jaespes
  */
 public class MatchController implements Initializable {
-
+    public static final String LOGIN = "/projetihm/frontend/Login.fxml";
     final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
     private int localGoal = 0;
     private int visitorGoal = 0;
