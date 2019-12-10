@@ -247,5 +247,10 @@
                   </Label>
          </children>
       </Pane>
+      <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="160.0" style="" text="Utilisateur: jan clop" AnchorPane.rightAnchor="-1.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
         </children>
     </AnchorPane>
