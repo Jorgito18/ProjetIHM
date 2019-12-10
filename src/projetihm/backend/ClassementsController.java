@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -53,6 +54,16 @@ public class ClassementsController implements Initializable {
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
 
+    @FXML
+    public void showHelp(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Aide");
+        alert.setHeaderText("Page d'accueil");
+        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
+                + "ou bien match en direct pour manipuler les donnes en direct ";
+        alert.setContentText(s);
+        alert.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);

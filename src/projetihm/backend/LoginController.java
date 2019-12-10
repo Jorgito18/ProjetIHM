@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -28,7 +30,16 @@ public class LoginController {
     public void openAsDirect() {
         redirectFromLogin(MATCH_DIRECT);
     }
-
+    @FXML
+    public void showHelp(){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Aide");
+        alert.setHeaderText("Page d'accueil");
+        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
+                + "ou bien match en direct pour manipuler les donnes en direct ";
+        alert.setContentText(s);
+        alert.show();
+    }
     @FXML
     public void redirectFromLogin(String windowPath) {
         try {

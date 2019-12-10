@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 /**
@@ -76,6 +77,17 @@ public class MatchController implements Initializable {
                }
             }
         });
+    }
+    
+    @FXML
+    public void showHelp(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Aide");
+        alert.setHeaderText("Page d'accueil");
+        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
+                + "ou bien match en direct pour manipuler les donnes en direct ";
+        alert.setContentText(s);
+        alert.show();
     }
     
     @FXML
