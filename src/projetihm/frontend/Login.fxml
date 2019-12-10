@@ -39,7 +39,7 @@
          <font>
             <Font size="21.0" />
          </font></Button>
-      <ImageView fitHeight="45.0" fitWidth="28.0" layoutX="881.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="help" fitHeight="45.0" fitWidth="28.0" layoutX="881.0" layoutY="461.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/help_image.png" />
          </image>

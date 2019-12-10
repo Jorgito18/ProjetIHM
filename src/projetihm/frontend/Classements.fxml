@@ -29,7 +29,7 @@
                 <Image url="@../images/parametresImg.png" />
               </image>
             </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="714.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="714.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/help_image.png" />
                      </image>
