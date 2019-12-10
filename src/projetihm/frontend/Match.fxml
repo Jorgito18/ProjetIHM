@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,43 +17,57 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.MatchController">
-  <children>
-    <VBox fx:id="sideMenu" prefHeight="683.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <children>
-        <Pane prefHeight="797.0" prefWidth="51.0">
-          <children>
-            <ImageView fx:id="retour" fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../images/left-arrow.png" />
-              </image>
-            </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../images/parametresImg.png" />
-              </image>
-            </ImageView>
-                  <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="744.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/help_image.png" />
-                     </image>
-                  </ImageView>
-          </children>
-        </Pane>
-      </children>
-    </VBox>
-    <Separator layoutX="69.0" layoutY="51.0" prefWidth="1129.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="5.0" />
-    <VBox layoutX="64.0" layoutY="69.0" prefHeight="70.0" prefWidth="1188.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
-      <children>
-        <Pane prefHeight="140.0" prefWidth="300.0" style="-fx-background-color: #204ba0;" />
-        <Pane prefHeight="200.0" prefWidth="1133.0" style="-fx-background-color: #FFFFFF">
-          <children>
-                  <Label fx:id="labelLocalGoal" layoutX="119.0" layoutY="5.0" text="0">
+<AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.MatchController"> 
+        <children>
+      <Pane layoutX="360.0" layoutY="74.0" prefHeight="64.0" prefWidth="587.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="311.0">
+         <children>
+                  <Label fx:id="labelTm" layoutX="413.0" layoutY="-5.0" text="TM" underline="true">
                      <font>
-                        <Font size="39.0" />
+                        <Font size="51.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelVisitorGoal" layoutX="1118.0" layoutY="5.0" prefHeight="56.0" prefWidth="21.0" text="0">
+                  <Label layoutX="290.0" layoutY="6.0" text=":">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="seconde" layoutX="309.0" layoutY="7.0" text="00">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="minute" layoutX="240.0" layoutY="7.0" text="00">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+         </children>
+         <padding>
+            <Insets left="340.0" right="311.0" />
+         </padding>
+      </Pane>
+          <VBox fx:id="sideMenu" prefHeight="733.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+              <Pane prefHeight="797.0" prefWidth="51.0">
+                <children>
+                  <ImageView fx:id="retour" fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../images/left-arrow.png" />
+                    </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="@../images/parametresImg.png" />
+                    </image>
+                  </ImageView>
+                </children>
+              </Pane>
+            </children>
+          </VBox>
+          <Separator layoutX="69.0" layoutY="51.0" prefWidth="1129.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="5.0" />
+        <Pane layoutX="64.0" layoutY="74.0" prefHeight="64.0" prefWidth="333.0" style="-fx-background-color: #FFFFFF" AnchorPane.leftAnchor="64.0">
+          <children>
+                  <Label fx:id="labelLocalGoal" layoutX="119.0" layoutY="5.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
@@ -62,173 +77,175 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1003.0" layoutY="16.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
+          </children>
+        </Pane>
+            <Label alignment="CENTER" layoutX="68.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Local" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="118.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Match en direct">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="49.0" fitWidth="51.0" layoutX="67.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lnh-logo_petit.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="64.0" layoutY="141.0" prefHeight="56.0" prefWidth="1188.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
+               <children>
+                  <Button fx:id="demarrer" layoutX="481.0" layoutY="16.0" mnemonicParsing="false" onAction="#chronoDemarrer" style="-fx-background-color: #12e02a;" text="Démarrer">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Label>
-                  <Label layoutX="685.0" layoutY="6.0" text="TM">
+                  </Button>
+                  <Button fx:id="arreter" layoutX="572.0" layoutY="16.0" mnemonicParsing="false" onAction="#stopTimer" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tm" layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#pauseTimer" style="-fx-background-color: #f2ff00;" text="T.M.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+         <padding>
+            <Insets left="64.0" right="6.0" />
+         </padding>
+            </Pane>
+            <TableView fx:id="tableLocal" layoutX="68.0" layoutY="238.0" prefHeight="404.0" prefWidth="362.0" AnchorPane.leftAnchor="68.0">
+              <columns>
+                <TableColumn fx:id="localColNumber" prefWidth="30.0" text="N º" />
+                  <TableColumn fx:id="localColinGame" prefWidth="77.0" text="Joue" />
+                  <TableColumn fx:id="localColCard" prefWidth="68.0" text="Cartes" />
+                  <TableColumn fx:id="localColName" prefWidth="186.0" text="Nom" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="236.0" prefHeight="404.0" prefWidth="362.0" AnchorPane.rightAnchor="11.0">
+              <columns>
+                <TableColumn fx:id="visitorColNumber" prefWidth="30.0" text="N º" />
+                  <TableColumn fx:id="visitorColinGame" prefWidth="54.0" text="Joue" />
+                  <TableColumn fx:id="visitorColCard" prefWidth="92.0" text="Cartes" />
+                  <TableColumn fx:id="visitorColName" prefWidth="185.0" text="Nom" />
+              </columns>
+            </TableView>
+            <TableView layoutX="538.0" layoutY="236.0" prefHeight="404.0" prefWidth="293.0" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0">
+              <columns>
+                <TableColumn prefWidth="108.0" text="Poste" />
+                  <TableColumn prefWidth="184.0" text="Nom" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="538.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="293.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text=" Visitant" AnchorPane.rightAnchor="11.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Pane layoutX="539.0" layoutY="205.0" prefHeight="5.0" prefWidth="293.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0" />
+            <MenuBar layoutX="337.0" layoutY="19.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Actions">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Fenêtre">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Outils">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Aide">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Pane layoutX="68.0" layoutY="653.0" prefHeight="125.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="68.0" />
+            <Pane layoutX="885.0" layoutY="653.0" prefHeight="125.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="11.0" />
+            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.rightAnchor="11.0" />
+            <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
+      <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="-3.0">
+         <children>
+                  <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="14.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/help_image.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="36.0" width="36.0" />
+                     </viewport>
+                  </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="1078.0" layoutY="141.0" prefHeight="56.0" prefWidth="174.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="6.0">
+         <children>
+                  <Button layoutX="87.0" layoutY="13.0" mnemonicParsing="false" onAction="#incrementVisitorGoal" text="But">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="13.0" mnemonicParsing="false" text="Expulsion">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="138.0" layoutY="13.0" mnemonicParsing="false" onAction="#decrementVisitorGoal" text="-">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+         </children>
+      </Pane>
+        <Pane layoutX="64.0" layoutY="69.0" prefHeight="5.0" prefWidth="1188.0" style="-fx-background-color: #204ba0;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0" />
+      <Pane layoutX="65.0" layoutY="141.0" prefHeight="56.0" prefWidth="241.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="65.0">
+         <children>
+                  <Button layoutX="100.0" layoutY="13.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="But">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" text="Expulsion">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="146.0" layoutY="13.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="940.0" layoutY="74.0" prefHeight="64.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="6.0">
+         <children>
+                  <Label fx:id="labelVisitorGoal" layoutX="271.0" layoutY="5.0" prefHeight="56.0" prefWidth="21.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="572.0" layoutY="7.0" text=":">
+                  <Label layoutX="154.0" layoutY="15.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
                      <font>
-                        <Font size="35.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="seconde" layoutX="594.0" layoutY="9.0" text="00">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="minute" layoutX="518.0" layoutY="9.0" text="00">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Label>
-          </children>
-        </Pane>
-      </children>
-    </VBox>
-      <Label layoutX="64.0" layoutY="206.0" minHeight="21.0" prefHeight="30.0" prefWidth="314.0" style="-fx-background-color: #FFFFFF;" text=" Local" AnchorPane.leftAnchor="64.0">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="118.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Match en direct">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="49.0" fitWidth="51.0" layoutX="67.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/lnh-logo_petit.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="64.0" layoutY="141.0" prefHeight="56.0" prefWidth="1188.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
-         <children>
-            <Button layoutX="93.0" layoutY="16.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="But">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="demarrer" layoutX="475.0" layoutY="16.0" mnemonicParsing="false" onAction="#chronoDemarrer" style="-fx-background-color: #12e02a;" text="Démarrer">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="arreter" layoutX="561.0" layoutY="16.0" mnemonicParsing="false" onAction="#stopTimer" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="tm" layoutX="647.0" layoutY="16.0" mnemonicParsing="false" onAction="#pauseTimer" style="-fx-background-color: #f2ff00;" text="T.M.">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="1108.0" layoutY="16.0" mnemonicParsing="false" onAction="#incrementVisitorGoal" text="But">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="7.0" layoutY="16.0" mnemonicParsing="false" text="Expulsion">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="1023.0" layoutY="16.0" mnemonicParsing="false" text="Expulsion">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="143.0" layoutY="16.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="1156.0" layoutY="16.0" mnemonicParsing="false" onAction="#decrementVisitorGoal" text="-">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
          </children>
       </Pane>
-      <TableView fx:id="tableLocal" layoutX="64.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
-        <columns>
-          <TableColumn fx:id="localColNumber" prefWidth="30.0" text="N º" />
-            <TableColumn fx:id="localColinGame" prefWidth="61.0" text="Joue" />
-            <TableColumn fx:id="localColCard" prefWidth="56.0" text="Cartes" />
-            <TableColumn fx:id="localColName" prefWidth="166.0" text="Nom" />
-        </columns>
-      </TableView>
-      <TableView fx:id="tableVisitor" layoutX="375.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
-        <columns>
-          <TableColumn fx:id="visitorColNumber" prefWidth="30.0" text="N º" />
-            <TableColumn fx:id="visitorColinGame" prefWidth="54.0" text="Joue" />
-            <TableColumn fx:id="visitorColCard" prefWidth="92.0" text="Cartes" />
-            <TableColumn fx:id="visitorColName" prefWidth="135.0" text="Nom" />
-        </columns>
-      </TableView>
-      <TableView layoutX="685.0" layoutY="236.0" prefHeight="404.0" prefWidth="255.0">
-        <columns>
-          <TableColumn prefWidth="108.0" text="Poste" />
-            <TableColumn prefWidth="146.0" text="Nom" />
-        </columns>
-      </TableView>
-      <Label layoutX="685.0" layoutY="206.0" minHeight="21.0" prefHeight="30.0" prefWidth="255.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="378.0" layoutY="206.0" minHeight="21.0" prefHeight="30.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;" text=" Visitant">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Pane layoutX="64.0" layoutY="203.0" prefHeight="6.0" prefWidth="876.0" style="-fx-background-color: #00a2dd;" />
-      <ScrollPane layoutX="946.0" layoutY="236.0" prefHeight="556.0" prefWidth="307.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="292.0" />
-        </content>
-      </ScrollPane>
-      <Label layoutX="946.0" layoutY="206.0" minHeight="21.0" prefHeight="30.0" prefWidth="307.0" style="-fx-background-color: #FFFFFF;" text=" Evenements récents">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Pane layoutX="946.0" layoutY="203.0" prefHeight="6.0" prefWidth="307.0" style="-fx-background-color: #FF0000;" />
-      <MenuBar layoutX="337.0" layoutY="19.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
-        <menus>
-          <Menu mnemonicParsing="false" text="Menu">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Actions">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Fenêtre">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Aide">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Aide">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <Pane layoutX="75.0" layoutY="653.0" prefHeight="125.0" prefWidth="397.0" style="-fx-background-color: #FFFFFF;" />
-      <Pane layoutX="491.0" layoutY="653.0" prefHeight="125.0" prefWidth="436.0" style="-fx-background-color: #FFFFFF;" />
-  </children>
-</AnchorPane>
+        </children>
+    </AnchorPane>
