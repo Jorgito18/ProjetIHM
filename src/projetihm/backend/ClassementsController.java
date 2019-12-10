@@ -11,17 +11,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import projetihm.backend.tables.ProligueTableModel;
 import projetihm.backend.tables.StarligueTableModel;
 
@@ -48,12 +52,41 @@ public class ClassementsController implements Initializable {
     private TableColumn<StarligueTableModel, Integer> colPtsStarligue;
     @FXML
     private TableColumn<StarligueTableModel, Integer> colVictStarligue;
+    @FXML
+    private ImageView retour;
     
     public ObservableList<ProligueTableModel> list = FXCollections.observableArrayList();
     
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
+    public static final String LOGIN = "/projetihm/frontend/Login.fxml";
+    
+    @FXML
+    public void openAsLogin() {
+        redirectFromClassements(LOGIN);
+    }
+    
+    @FXML
+    public void redirectFromClassements(String windowPath) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(windowPath));
+            fxmlLoader.load();
 
+            Parent parent = fxmlLoader.getRoot();
+            Stage stage = new Stage(StageStyle.DECORATED);
+            Stage mainStage = (Stage) retour.getScene().getWindow();
+            
+            stage.setTitle("Association Française d'Handball");
+            stage.setScene(new Scene(parent));
+            
+            stage.show();
+            mainStage.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     @FXML
     public void showHelp(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -127,5 +160,6 @@ public class ClassementsController implements Initializable {
         }
         tableStarligue.setItems(list); 
     }
+    
 }
 
