@@ -6,6 +6,10 @@
 package projetihm.backend;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -13,14 +17,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import java.util.concurrent.TimeUnit;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import projetihm.backend.tables.TeamOneTableModel;
+import projetihm.backend.tables.TeamTwoTableModel;
 
 /**
  *
@@ -41,9 +52,22 @@ public class MatchController implements Initializable {
     @FXML private Label labelLocalGoal;
     @FXML private Label labelVisitorGoal;
 
+    @FXML private TableView<TeamOneTableModel> tableLocal;
+    @FXML private TableColumn<TeamOneTableModel, String> localColName;
+    @FXML private TableColumn<TeamOneTableModel, String> localColinGame;
+    @FXML private TableColumn<TeamOneTableModel, Integer> localColNumber;
+    @FXML private TableColumn<TeamOneTableModel, String> localColCard;
+    
+    @FXML private TableView<TeamTwoTableModel> tableVisitor;
+    @FXML private TableColumn<TeamTwoTableModel, String> visitorColName;
+    @FXML private TableColumn<TeamTwoTableModel, String> visitorColinGame;
+    @FXML private TableColumn<TeamTwoTableModel, Integer> visitorColNumber;
+    @FXML private TableColumn<TeamTwoTableModel, String> visitorColCard;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         
+        retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
+        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
     }
     
     @FXML
@@ -74,7 +98,6 @@ public class MatchController implements Initializable {
     @FXML
     public void chronoDemarrer() {
         threadFlag = true;
-
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
@@ -221,5 +244,61 @@ public class MatchController implements Initializable {
             labelVisitorGoal.setText(String.valueOf(visitorGoal));
         }
     }
+    
+    public void retrieveDataLocal(String driverPath) {
+        ObservableList<TeamOneTableModel> list = FXCollections.observableArrayList();
+
+        /* establish connection */
+        try (Connection connection = DriverManager.getConnection(driverPath);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * from TABLE_PARIS")) {
+
+            /* get data from database */
+            while (resultSet.next()) {
+                list.add(new TeamOneTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
+                    resultSet.getString("EN_JEU"), resultSet.getString("CARTES")));
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        
+        /* display retrieved data from database in TableView columns */
+        try {
+            localColName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            localColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
+            localColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
+            localColCard.setCellValueFactory(new PropertyValueFactory<>("cartes"));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tableLocal.setItems(list); 
+    }
+   
+    public void retrieveDataVisitor(String driverPath) {
+        ObservableList<TeamTwoTableModel> list = FXCollections.observableArrayList();
+
+        try (Connection connection = DriverManager.getConnection(driverPath);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * from TABLE_TOULOUSE")) {
+
+            while (resultSet.next()) {
+                list.add(new TeamTwoTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
+                    resultSet.getString("EN_JEU"), resultSet.getString("CARTES")));
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        
+        try {
+            visitorColName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            visitorColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
+            visitorColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
+            visitorColCard.setCellValueFactory(new PropertyValueFactory<>("cartes"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tableVisitor.setItems(list); 
+    } 
     
 }

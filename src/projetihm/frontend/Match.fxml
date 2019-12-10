@@ -155,20 +155,20 @@
             </Button>
          </children>
       </Pane>
-      <TableView layoutX="64.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
+      <TableView fx:id="tableLocal" layoutX="64.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
         <columns>
-          <TableColumn prefWidth="30.0" text="N º" />
-            <TableColumn prefWidth="61.0" text="Joue" />
-            <TableColumn prefWidth="56.0" text="Carton" />
-            <TableColumn prefWidth="166.0" text="Nom" />
+          <TableColumn fx:id="localColNumber" prefWidth="30.0" text="N º" />
+            <TableColumn fx:id="localColinGame" prefWidth="61.0" text="Joue" />
+            <TableColumn fx:id="localColCard" prefWidth="56.0" text="Cartes" />
+            <TableColumn fx:id="localColName" prefWidth="166.0" text="Nom" />
         </columns>
       </TableView>
-      <TableView layoutX="375.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
+      <TableView fx:id="tableVisitor" layoutX="375.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
         <columns>
-          <TableColumn prefWidth="30.0" text="N º" />
-            <TableColumn prefWidth="54.0" text="Joue" />
-            <TableColumn prefWidth="92.0" text="Carton" />
-            <TableColumn prefWidth="135.0" text="Nom" />
+          <TableColumn fx:id="visitorColNumber" prefWidth="30.0" text="N º" />
+            <TableColumn fx:id="visitorColinGame" prefWidth="54.0" text="Joue" />
+            <TableColumn fx:id="visitorColCard" prefWidth="92.0" text="Cartes" />
+            <TableColumn fx:id="visitorColName" prefWidth="135.0" text="Nom" />
         </columns>
       </TableView>
       <TableView layoutX="685.0" layoutY="236.0" prefHeight="404.0" prefWidth="255.0">

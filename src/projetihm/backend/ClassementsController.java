@@ -54,9 +54,7 @@ public class ClassementsController implements Initializable {
     private TableColumn<StarligueTableModel, Integer> colVictStarligue;
     @FXML
     private ImageView retour;
-    
-    public ObservableList<ProligueTableModel> list = FXCollections.observableArrayList();
-    
+        
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";

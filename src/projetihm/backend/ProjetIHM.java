@@ -6,15 +6,11 @@ package projetihm.backend;
  * and open the template in the editor.
  */
 
-
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import projetihm.backend.sql.SqlConnectionImpl;
 
 /**
  *
@@ -23,7 +19,6 @@ import projetihm.backend.sql.SqlConnectionImpl;
 public class ProjetIHM extends Application {
     private static final String TABLE_VISITORS = "visitant";
     private static final String TABLE_LOCAL = "local";
-    
     
     @Override
     public void start(Stage stage) throws Exception { 
