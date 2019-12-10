@@ -114,7 +114,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="arreter" layoutX="561.0" layoutY="16.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
+            <Button fx:id="arreter" layoutX="561.0" layoutY="16.0" mnemonicParsing="false" onAction="#stopTimer" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
                <font>
                   <Font size="14.0" />
                </font>

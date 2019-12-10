@@ -78,4 +78,21 @@ public class MatchController implements Initializable {
         });
     }
     
+    @FXML
+    private void stopTimer() {
+        /* get active threads */
+        int count = Thread.activeCount();
+        Thread th[] = new Thread[count];
+        /* return the number of threads put into the array */
+        Thread.enumerate(th);
+        
+        /* interrupt the JavaFX thread pool that was launched by the timer */
+        for (int i = 0; i < count; i++) {            
+            if (th[i].getName().startsWith("pool")) {
+                th[i].interrupt();
+                break;
+            }
+        }
+    }
+    
 }
