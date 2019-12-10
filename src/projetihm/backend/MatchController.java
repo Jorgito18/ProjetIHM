@@ -56,7 +56,11 @@ public class MatchController implements Initializable {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                seconde.setText(String.valueOf(i));
+                if(i < 10){
+                    seconde.setText(0 + String.valueOf(i));
+                }else{
+                    seconde.setText(String.valueOf(i));
+               }
             }
         });
     }
@@ -65,7 +69,11 @@ public class MatchController implements Initializable {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                minute.setText(String.valueOf(i));
+                if(i < 10){
+                    minute.setText(0 + String.valueOf(i));
+                }else{
+                    minute.setText(String.valueOf(i));
+               }
             }
         });
     }
