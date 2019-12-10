@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -15,7 +18,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.ClassementsController">
   <children>
-    <VBox fx:id="sideMenu" prefHeight="683.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox fx:id="sideMenu" prefHeight="698.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <Pane prefHeight="764.0" prefWidth="51.0">
           <children>
@@ -29,11 +32,6 @@
                 <Image url="@../images/parametresImg.png" />
               </image>
             </ImageView>
-                  <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="714.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/help_image.png" />
-                     </image>
-                  </ImageView>
           </children>
         </Pane>
       </children>
@@ -56,16 +54,16 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
                      <children>
-                        <TableView fx:id="tableProligue" prefHeight="621.0" prefWidth="820.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableProligue" prefHeight="659.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn fx:id="colNameProligue" prefWidth="292.0" text="NOM" />
                               <TableColumn fx:id="colPtsProligue" prefWidth="197.0" text="PTS" />
                               <TableColumn fx:id="colVictProligue" prefWidth="324.0" text="VICT" />
                            </columns>
                         </TableView>
-                        <TableView layoutX="814.0" prefHeight="621.0" prefWidth="442.0" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn prefWidth="357.0" text="Joueurs" />
+                              <TableColumn prefWidth="441.0" text="Joueurs" />
                            </columns>
                         </TableView>
                      </children>
@@ -76,14 +74,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
                      <children>
-                        <TableView fx:id="tableStarligue" prefHeight="621.0" prefWidth="820.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableStarligue" prefHeight="658.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn fx:id="colNameStarligue" prefWidth="211.99996948242188" text="NOM" />
                               <TableColumn fx:id="colPtsStarligue" prefWidth="277.0" text="PTS" />
                               <TableColumn fx:id="colVictStarligue" prefWidth="324.0" text="VICT" />
                            </columns>
                         </TableView>
-                        <TableView layoutX="814.0" prefHeight="621.0" prefWidth="442.0" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn prefWidth="439.0" text="Joueurs" />
                            </columns>
@@ -94,5 +92,48 @@
           </Tab>
         </tabs>
       </TabPane>
+      <Pane layoutY="698.0" prefHeight="66.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="16.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/help_image.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="1159.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="160.0" style="" text="Utilisateur: jan clop">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="415.0" layoutY="17.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
+         <menus>
+            <Menu mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Actions">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Fenêtre">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Outils">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Aide">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
   </children>
 </AnchorPane>
