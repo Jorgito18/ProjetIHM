@@ -43,7 +43,7 @@ public class MatchController implements Initializable {
                            Thread.sleep(1000);
                            incrementSecondes(i);
                         } catch (InterruptedException ex) {
-                            Logger.getLogger(MatchController.class.getName()).log(Level.SEVERE, null, ex);
+                            Thread.currentThread().interrupt();
                         }
                     }
                     incrementMinutes(j); 
