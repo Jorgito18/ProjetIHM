@@ -51,7 +51,8 @@ public class MatchController implements Initializable {
     @FXML private Label seconde;
     @FXML private Label labelLocalGoal;
     @FXML private Label labelVisitorGoal;
-
+    @FXML private Label labelTm;
+ 
     @FXML private TableView<TeamOneTableModel> tableLocal;
     @FXML private TableColumn<TeamOneTableModel, String> localColName;
     @FXML private TableColumn<TeamOneTableModel, String> localColinGame;
@@ -66,6 +67,7 @@ public class MatchController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        labelTm.setVisible(false);
         retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
         retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
     }
@@ -98,6 +100,7 @@ public class MatchController implements Initializable {
     @FXML
     public void chronoDemarrer() {
         threadFlag = true;
+        labelTm.setVisible(false);
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
@@ -190,6 +193,7 @@ public class MatchController implements Initializable {
         }
         lastMinuteValue = minute.getText();
         lastSecondsValue = seconde.getText();
+        labelTm.setVisible(true);
     }
     
     @FXML
@@ -211,6 +215,7 @@ public class MatchController implements Initializable {
         threadFlag = false;
         lastMinuteValue = null;
         lastSecondsValue = null;
+        labelTm.setVisible(false);
     }
     
     @FXML
