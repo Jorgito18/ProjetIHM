@@ -113,7 +113,7 @@ public class MatchController implements Initializable {
     @FXML
     public void incrementLocalGoal() {
         localGoal++;
-        labelLocalGoal.setText(String.valueOf(100));
+        labelLocalGoal.setText(String.valueOf(localGoal));
     }
     
     @FXML
@@ -129,7 +129,7 @@ public class MatchController implements Initializable {
     @FXML
     public void incrementVisitorGoal() {
         visitorGoal++;
-        labelVisitorGoal.setText(String.valueOf(100));
+        labelVisitorGoal.setText(String.valueOf(visitorGoal));
     }
     
     @FXML
