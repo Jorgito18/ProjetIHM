@@ -74,22 +74,45 @@ public class MatchController implements Initializable {
     @FXML
     public void chronoDemarrer() {
         threadFlag = true;
-        
+
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
             while (threadFlag) {
-            for (int j = 1; j < 60; j++) {
-                for (int i = 0; i <= 60; i++) {
-                    try {
-                        Thread.sleep(1000);
-                        incrementTimer(i, j);
-                        } catch (InterruptedException ex) {
-                            Thread.currentThread().interrupt();
+                int minutes = 0;
+                int seconds = 0;
+
+                if (lastMinuteValue != null) {
+                    minutes = Integer.valueOf(lastMinuteValue);
+                    seconds = Integer.valueOf(lastSecondsValue);
+                    
+                    for (int j = 1; j < 60; j++) {
+                            minutes++;
+                        for (int i = 0; i <= 60; i++) {
+                            try {
+                                seconds++;
+                                Thread.sleep(1000);
+                                incrementTimer(seconds, minutes);
+                                if (seconds == 60) 
+                                    seconds = 0;
+                                } catch (InterruptedException ex) {
+                                    Thread.currentThread().interrupt();
+                                }
+                            }
+                        }
+                } else {
+                    for (int j = 1; j < 60; j++) {
+                        for (int i = 0; i <= 60; i++) {
+                            try {
+                                Thread.sleep(1000);
+                                incrementTimer(i, j);
+                                } catch (InterruptedException ex) {
+                                    Thread.currentThread().interrupt();
+                                }
+                            }
                         }
                     }
                 }
-            }
            }
         }, 0, 1, TimeUnit.SECONDS);
     }
