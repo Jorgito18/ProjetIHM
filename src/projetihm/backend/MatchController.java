@@ -28,6 +28,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import projetihm.backend.tables.TeamOneTableModel;
@@ -52,7 +54,9 @@ public class MatchController implements Initializable {
     @FXML private Label labelLocalGoal;
     @FXML private Label labelVisitorGoal;
     @FXML private Label labelTm;
- 
+    @FXML private TextFlow textFlowLocal;
+    @FXML private TextFlow textFlowVisitor;
+
     @FXML private TableView<TeamOneTableModel> tableLocal;
     @FXML private TableColumn<TeamOneTableModel, String> localColName;
     @FXML private TableColumn<TeamOneTableModel, String> localColinGame;
@@ -306,4 +310,30 @@ public class MatchController implements Initializable {
         tableVisitor.setItems(list); 
     } 
     
+    @FXML
+    public void giveYellowCardLocal() {
+        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
+        Text name = new Text(teamOne.getName() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/yellow-card.png");
+
+        textFlowLocal.getChildren().addAll(imageView, name);
+    }
+    
+    @FXML
+    public void giveRedCardLocal() {
+        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
+        Text name = new Text(teamOne.getName() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/red-card.png");
+
+        textFlowLocal.getChildren().addAll(imageView, name);
+    }
+    
+    @FXML
+    public void expulserLocal() {
+        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
+        Text name = new Text(teamOne.getName() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
+
+        textFlowLocal.getChildren().addAll(imageView, name);
+    }
 }
