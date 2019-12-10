@@ -14,13 +14,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class LoginController {
     public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";
     public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
-
+    @FXML private Button classements;
+    
     @FXML
     public void openAsClassement() {
         redirectFromLogin(CLASEMENTS);
@@ -49,12 +51,14 @@ public class LoginController {
 
             Parent parent = fxmlLoader.getRoot();
             Stage stage = new Stage(StageStyle.DECORATED);
+            Stage mainStage = (Stage) classements.getScene().getWindow();
 
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
             //stage.setResizable(false);
             
             stage.show();
+            mainStage.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
