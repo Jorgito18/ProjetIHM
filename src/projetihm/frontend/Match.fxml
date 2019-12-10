@@ -158,19 +158,17 @@
       <TableView layoutX="64.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
         <columns>
           <TableColumn prefWidth="30.0" text="N º" />
-            <TableColumn prefWidth="38.0" text="Joue" />
-            <TableColumn prefWidth="50.0" text="Carton" />
-            <TableColumn prefWidth="64.0" text="Expulsé" />
-            <TableColumn prefWidth="131.0" text="Nom" />
+            <TableColumn prefWidth="61.0" text="Joue" />
+            <TableColumn prefWidth="56.0" text="Carton" />
+            <TableColumn prefWidth="166.0" text="Nom" />
         </columns>
       </TableView>
       <TableView layoutX="375.0" layoutY="236.0" prefHeight="404.0" prefWidth="314.0">
         <columns>
           <TableColumn prefWidth="30.0" text="N º" />
-            <TableColumn prefWidth="33.0" text="Joue" />
-            <TableColumn prefWidth="49.0" text="Carton" />
-            <TableColumn prefWidth="68.0" text="Expulsé" />
-            <TableColumn prefWidth="142.0" text="Nom" />
+            <TableColumn prefWidth="54.0" text="Joue" />
+            <TableColumn prefWidth="92.0" text="Carton" />
+            <TableColumn prefWidth="135.0" text="Nom" />
         </columns>
       </TableView>
       <TableView layoutX="685.0" layoutY="236.0" prefHeight="404.0" prefWidth="255.0">
@@ -230,5 +228,7 @@
             </Menu>
         </menus>
       </MenuBar>
+      <Pane layoutX="75.0" layoutY="653.0" prefHeight="125.0" prefWidth="397.0" style="-fx-background-color: #FFFFFF;" />
+      <Pane layoutX="491.0" layoutY="653.0" prefHeight="125.0" prefWidth="436.0" style="-fx-background-color: #FFFFFF;" />
   </children>
 </AnchorPane>
