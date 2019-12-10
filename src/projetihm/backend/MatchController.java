@@ -45,43 +45,37 @@ public class MatchController implements Initializable {
                     for (int i = 0; i <= 60; i++) {
                         try {
                            Thread.sleep(1000);
-                           incrementSecondes(i);
+                           incrementTimer(i, j);
                         } catch (InterruptedException ex) {
                             Thread.currentThread().interrupt();
                         }
                     }
-                    incrementMinutes(j); 
+                    //incrementMinutes(j); 
                 }
             }
         }, 0, 1, TimeUnit.SECONDS);
     }
-
-    private void incrementSecondes(int i) {
+    
+    private void incrementTimer(int i, int j) {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(i < 10){
+                if(i < 10) {
                     seconde.setText(0 + String.valueOf(i));
-                }else{
+                } else {
                     seconde.setText(String.valueOf(i));
-               }
+                }
+                if (i == 60) {
+                    if(j < 10){
+                    minute.setText(0 + String.valueOf(j));
+                } else {
+                    minute.setText(String.valueOf(j));
+                    }  
+                }
             }
         });
     }
-    
-    private void incrementMinutes(int i) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                if(i < 10){
-                    minute.setText(0 + String.valueOf(i));
-                }else{
-                    minute.setText(String.valueOf(i));
-               }
-            }
-        });
-    }
-    
+
     @FXML
     public void showHelp(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -91,6 +85,11 @@ public class MatchController implements Initializable {
                 + "ou bien match en direct pour manipuler les donnes en direct ";
         alert.setContentText(s);
         alert.show();
+    }
+    
+    @FXML
+    private void pauseTimer() {
+        System.out.println("sssss");
     }
     
     @FXML
@@ -108,6 +107,8 @@ public class MatchController implements Initializable {
                 break;
             }
         }
+        minute.setText("00");
+        seconde.setText("00");
     }
     
     @FXML

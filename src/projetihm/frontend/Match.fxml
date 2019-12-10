@@ -119,7 +119,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="tm" layoutX="647.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: #f2ff00;" text="T.M.">
+            <Button fx:id="tm" layoutX="647.0" layoutY="16.0" mnemonicParsing="false" onAction="#pauseTimer" style="-fx-background-color: #f2ff00;" text="T.M.">
                <font>
                   <Font size="14.0" />
                </font>
