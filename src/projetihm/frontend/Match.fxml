@@ -43,12 +43,12 @@
         <Pane prefHeight="140.0" prefWidth="300.0" style="-fx-background-color: #204ba0;" />
         <Pane prefHeight="200.0" prefWidth="1133.0" style="-fx-background-color: #FFFFFF">
           <children>
-                  <Label layoutX="119.0" layoutY="5.0" text="0">
+                  <Label fx:id="labelLocalGoal" layoutX="119.0" layoutY="5.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1140.0" layoutY="5.0" prefHeight="56.0" prefWidth="21.0" text="0">
+                  <Label fx:id="labelVisitorGoal" layoutX="1097.0" layoutY="5.0" prefHeight="56.0" prefWidth="84.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1029.0" layoutY="16.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
+                  <Label layoutX="1003.0" layoutY="16.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -104,7 +104,7 @@
       </ImageView>
       <Pane layoutX="64.0" layoutY="141.0" prefHeight="56.0" prefWidth="1188.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
          <children>
-            <Button layoutX="93.0" layoutY="16.0" mnemonicParsing="false" text="But">
+            <Button layoutX="93.0" layoutY="16.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="But">
                <font>
                   <Font size="14.0" />
                </font>
@@ -124,7 +124,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="1108.0" layoutY="16.0" mnemonicParsing="false" text="But">
+            <Button layoutX="1108.0" layoutY="16.0" mnemonicParsing="false" onAction="#incrementVisitorGoal" text="But">
                <font>
                   <Font size="14.0" />
                </font>
@@ -139,12 +139,12 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="143.0" layoutY="16.0" mnemonicParsing="false" text="-">
+            <Button layoutX="143.0" layoutY="16.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="1156.0" layoutY="16.0" mnemonicParsing="false" text="-">
+            <Button layoutX="1156.0" layoutY="16.0" mnemonicParsing="false" onAction="#decrementVisitorGoal" text="-">
                <font>
                   <Font size="14.0" />
                </font>

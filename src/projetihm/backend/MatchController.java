@@ -12,8 +12,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -24,9 +22,15 @@ import javafx.scene.control.Label;
  */
 public class MatchController implements Initializable {
 
+    final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+    private int localGoal = 0;
+    private int visitorGoal = 0;
+
     @FXML private Label minute;
     @FXML private Label seconde;
-           
+    @FXML private Label labelLocalGoal;
+    @FXML private Label labelVisitorGoal;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -34,7 +38,6 @@ public class MatchController implements Initializable {
     
     @FXML
     public void chronoDemarrer() {
-        final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
@@ -104,6 +107,38 @@ public class MatchController implements Initializable {
                 th[i].interrupt();
                 break;
             }
+        }
+    }
+    
+    @FXML
+    public void incrementLocalGoal() {
+        localGoal++;
+        labelLocalGoal.setText(String.valueOf(100));
+    }
+    
+    @FXML
+    public void decrementLocalGoal() {
+        if (localGoal <= 0) {
+            labelLocalGoal.setText(String.valueOf(0));
+        } else {
+            localGoal--;
+            labelLocalGoal.setText(String.valueOf(localGoal));
+        }
+    }
+    
+    @FXML
+    public void incrementVisitorGoal() {
+        visitorGoal++;
+        labelVisitorGoal.setText(String.valueOf(100));
+    }
+    
+    @FXML
+    public void decrementVisitorGoal() {
+        if (visitorGoal <= 0) {
+            labelVisitorGoal.setText(String.valueOf(0));
+        } else {
+            visitorGoal--;
+            labelVisitorGoal.setText(String.valueOf(visitorGoal));
         }
     }
     
