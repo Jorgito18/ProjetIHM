@@ -15,6 +15,9 @@ import java.util.concurrent.TimeUnit;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -26,6 +29,7 @@ public class MatchController implements Initializable {
     private int localGoal = 0;
     private int visitorGoal = 0;
 
+    @FXML private ImageView retour;
     @FXML private Label minute;
     @FXML private Label seconde;
     @FXML private Label labelLocalGoal;
@@ -34,6 +38,31 @@ public class MatchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+    }
+    
+    @FXML
+    public void openAsLogin() {
+        redirectFromMatch(LOGIN);
+    }
+    @FXML
+    public void redirectFromMatch(String windowPath) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource(windowPath));
+            fxmlLoader.load();
+
+            Parent parent = fxmlLoader.getRoot();
+            Stage stage = new Stage(StageStyle.DECORATED);
+            Stage mainStage = (Stage) retour.getScene().getWindow();
+            
+            stage.setTitle("Association Française d'Handball");
+            stage.setScene(new Scene(parent));
+            
+            stage.show();
+            mainStage.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
     @FXML
