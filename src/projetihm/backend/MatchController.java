@@ -28,10 +28,13 @@ import javafx.stage.StageStyle;
  */
 public class MatchController implements Initializable {
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";
-    final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+    final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
     private int localGoal = 0;
     private int visitorGoal = 0;
-
+    private boolean threadFlag = false;
+    private String lastMinuteValue = null;
+    private String lastSecondsValue = null;
+    
     @FXML private ImageView retour;
     @FXML private Label minute;
     @FXML private Label seconde;
@@ -40,7 +43,7 @@ public class MatchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+         
     }
     
     @FXML
@@ -70,21 +73,24 @@ public class MatchController implements Initializable {
     
     @FXML
     public void chronoDemarrer() {
+        threadFlag = true;
+        
         executorService.scheduleAtFixedRate(new Runnable() {
         @Override
         public void run() {
-                for (int j = 1; j < 60; j++) {
-                    for (int i = 0; i <= 60; i++) {
-                        try {
-                           Thread.sleep(1000);
-                           incrementTimer(i, j);
+            while (threadFlag) {
+            for (int j = 1; j < 60; j++) {
+                for (int i = 0; i <= 60; i++) {
+                    try {
+                        Thread.sleep(1000);
+                        incrementTimer(i, j);
                         } catch (InterruptedException ex) {
                             Thread.currentThread().interrupt();
                         }
                     }
-                    //incrementMinutes(j); 
                 }
             }
+           }
         }, 0, 1, TimeUnit.SECONDS);
     }
     
@@ -121,7 +127,23 @@ public class MatchController implements Initializable {
     
     @FXML
     private void pauseTimer() {
-        System.out.println("sssss");
+        if (threadFlag) {
+            threadFlag = false;
+            /* get active threads */
+            int count = Thread.activeCount();
+            Thread th[] = new Thread[count];
+            /* return the number of threads put into the array */
+            Thread.enumerate(th);
+
+            /* interrupt the JavaFX thread pool that was launched by the timer */
+            for (int i = 0; i < count; i++) {     
+                if (th[i].getName().startsWith("pool")) {
+                    th[i].interrupt();
+                }
+            }
+        }
+        lastMinuteValue = minute.getText();
+        lastSecondsValue = seconde.getText();
     }
     
     @FXML
@@ -133,14 +155,16 @@ public class MatchController implements Initializable {
         Thread.enumerate(th);
         
         /* interrupt the JavaFX thread pool that was launched by the timer */
-        for (int i = 0; i < count; i++) {            
+        for (int i = 0; i < count; i++) {     
             if (th[i].getName().startsWith("pool")) {
                 th[i].interrupt();
-                break;
             }
         }
         minute.setText("00");
         seconde.setText("00");
+        threadFlag = false;
+        lastMinuteValue = null;
+        lastSecondsValue = null;
     }
     
     @FXML

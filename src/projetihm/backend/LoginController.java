@@ -8,6 +8,7 @@ package projetihm.backend;
 
 
 
+import java.lang.reflect.Method;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,6 +22,7 @@ import javafx.stage.StageStyle;
 public class LoginController {
     public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";
     public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
+    
     @FXML private Button classements;
     
     @FXML
@@ -44,6 +46,7 @@ public class LoginController {
     }
     @FXML
     public void redirectFromLogin(String windowPath) {
+        
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource(windowPath));
