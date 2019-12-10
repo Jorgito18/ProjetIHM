@@ -18,9 +18,9 @@
       <children>
         <Pane prefHeight="797.0" prefWidth="51.0">
           <children>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../images/menuImg.png" />
+                <Image url="@../images/left-arrow.png" />
               </image>
             </ImageView>
             <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
