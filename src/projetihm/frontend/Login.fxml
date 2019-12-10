@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="355.0" fitWidth="410.0" layoutX="84.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/LNH.png" />
+                  <Image url="@../images/LNH.png" />
                </image>
             </ImageView>
             <Label layoutX="2.0" layoutY="40.0" style="-fx-text-fill: white;" text="Association Française d'Handball">
