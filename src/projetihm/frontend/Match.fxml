@@ -12,6 +12,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -53,7 +54,7 @@
             <children>
               <Pane prefHeight="797.0" prefWidth="51.0">
                 <children>
-                  <ImageView fx:id="retour" fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="retour" fitHeight="36.0" fitWidth="31.0" layoutX="10.0" layoutY="7.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
                     <image>
                       <Image url="@../images/left-arrow.png" />
                     </image>
@@ -63,6 +64,12 @@
                       <Image url="@../images/settings.png" />
                     </image>
                   </ImageView>
+                  <ImageView fx:id="toClassemet" fitHeight="47.0" fitWidth="46.0" layoutX="3.0" layoutY="129.0" onMouseClicked="#openAsClassement" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/leaderboard.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutY="48.0" prefHeight="5.0" prefWidth="51.0" />
                 </children>
               </Pane>
             </children>
@@ -161,13 +168,13 @@
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView layoutX="538.0" layoutY="236.0" prefHeight="404.0" prefWidth="293.0" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0">
+            <TableView layoutX="520.0" layoutY="236.0" prefHeight="255.0" prefWidth="345.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="457.0">
               <columns>
                 <TableColumn prefWidth="108.0" text="Poste" />
                   <TableColumn prefWidth="184.0" text="Nom" />
               </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="538.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="293.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0">
+            <Label alignment="CENTER" layoutX="518.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="345.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -177,8 +184,8 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Pane layoutX="539.0" layoutY="205.0" prefHeight="5.0" prefWidth="293.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0" />
-            <MenuBar layoutX="337.0" layoutY="19.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
+            <Pane layoutX="518.0" layoutY="205.0" prefHeight="5.0" prefWidth="345.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0" />
+            <MenuBar layoutX="331.0" layoutY="14.0" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #f0f0f0;">
               <menus>
                 <Menu mnemonicParsing="false" text="Menu">
                   <items>
@@ -207,9 +214,9 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.rightAnchor="11.0" />
+            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
             <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
-      <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="-3.0">
+      <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
          <children>
                   <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="14.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -219,23 +226,19 @@
                         <Rectangle2D height="36.0" width="36.0" />
                      </viewport>
                   </ImageView>
+            <Separator layoutX="1.0" layoutY="-1.0" prefHeight="5.0" prefWidth="51.0" />
          </children>
       </Pane>
       <Pane layoutX="1078.0" layoutY="141.0" prefHeight="56.0" prefWidth="174.0" style="-fx-background-color: #FFFFFF;" AnchorPane.rightAnchor="6.0">
          <children>
-                  <Button layoutX="87.0" layoutY="13.0" mnemonicParsing="false" onAction="#incrementVisitorGoal" text="But">
+                  <Button layoutX="124.0" layoutY="9.0" mnemonicParsing="false" onAction="#incrementVisitorGoal" text="+">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutY="13.0" mnemonicParsing="false" text="Expulsion">
+                  <Button layoutX="64.0" layoutY="9.0" mnemonicParsing="false" onAction="#decrementVisitorGoal" text="-">
                      <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="138.0" layoutY="13.0" mnemonicParsing="false" onAction="#decrementVisitorGoal" text="-">
-                     <font>
-                        <Font size="14.0" />
+                        <Font size="17.0" />
                      </font>
                   </Button>
          </children>
@@ -243,19 +246,14 @@
         <Pane layoutX="64.0" layoutY="69.0" prefHeight="5.0" prefWidth="1188.0" style="-fx-background-color: #204ba0;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0" />
       <Pane layoutX="65.0" layoutY="141.0" prefHeight="56.0" prefWidth="241.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="65.0">
          <children>
-                  <Button layoutX="100.0" layoutY="13.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="But">
+                  <Button layoutX="103.0" layoutY="9.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="+">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" text="Expulsion">
+                  <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
                      <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="146.0" layoutY="13.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
-                     <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
          </children>
@@ -267,14 +265,14 @@
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="154.0" layoutY="15.0" prefHeight="35.0" prefWidth="84.0" text="Visitant">
+                  <Label layoutX="121.0" layoutY="15.0" prefHeight="35.0" prefWidth="117.0" text="Visitant">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
          </children>
       </Pane>
-      <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="160.0" style="" text="Utilisateur: jan clop" AnchorPane.rightAnchor="-1.0">
+      <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Utilisateur: jan clop" AnchorPane.rightAnchor="-1.0">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -290,7 +288,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.rightAnchor="11.0" />
+      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
       <ScrollPane layoutX="68.0" layoutY="691.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="68.0" AnchorPane.topAnchor="691.0">
          <content>
             <TextFlow fx:id="textFlowLocal" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
@@ -301,5 +299,30 @@
             <TextFlow fx:id="textFlowVisitor" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
+      <TextField layoutX="641.0" layoutY="12.0" prefHeight="30.0" prefWidth="397.0" promptText="Chercher" />
+      <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="1038.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/search.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="484.0" layoutY="546.0" prefHeight="237.0" prefWidth="412.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="74.0" fitWidth="212.0" layoutX="-27.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/gaucheT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="89.0" fitWidth="187.0" layoutX="252.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/droiteT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/centreT.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
         </children>
     </AnchorPane>
