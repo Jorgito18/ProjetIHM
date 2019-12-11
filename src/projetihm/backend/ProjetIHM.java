@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -35,6 +36,7 @@ public class ProjetIHM extends Application {
         stage.setTitle("Association Française d'Handball");
         stage.setResizable(false);
         stage.show();
+        stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
 
     /**

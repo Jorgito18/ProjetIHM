@@ -29,7 +29,7 @@
             </ImageView>
             <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../images/parametresImg.png" />
+                <Image url="@../images/settings.png" />
               </image>
             </ImageView>
           </children>

@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -34,6 +35,7 @@ public class LoginController {
     public void openAsDirect() {
         redirectFromLogin(MATCH_DIRECT);
     }
+    
     @FXML
     public void showHelp(){
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -43,7 +45,10 @@ public class LoginController {
                 + "ou bien match en direct pour manipuler les donnes en direct ";
         alert.setContentText(s);
         alert.show();
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
+    
     @FXML
     public void redirectFromLogin(String windowPath) {
         
@@ -61,6 +66,7 @@ public class LoginController {
             //stage.setResizable(false);
             
             stage.show();
+            stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
             mainStage.close();
         } catch (Exception e) {
             e.printStackTrace();

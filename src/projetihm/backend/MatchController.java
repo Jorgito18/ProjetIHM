@@ -27,6 +27,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -80,6 +81,7 @@ public class MatchController implements Initializable {
     public void openAsLogin() {
         redirectFromMatch(LOGIN);
     }
+    
     @FXML
     public void redirectFromMatch(String windowPath) {
         try {
@@ -172,10 +174,11 @@ public class MatchController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
-                + "ou bien match en direct pour manipuler les donnes en direct ";
+        String s ="Le match en direct pour effectuer qui sauvegarde la statistique a partir des donnees enregistrees.";
         alert.setContentText(s);
         alert.show();
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
     
     @FXML
@@ -313,27 +316,54 @@ public class MatchController implements Initializable {
     @FXML
     public void giveYellowCardLocal() {
         TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text name = new Text(teamOne.getName() + "\n");
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
         ImageView imageView = new ImageView("projetihm/images/yellow-card.png");
 
-        textFlowLocal.getChildren().addAll(imageView, name);
+        textFlowLocal.getChildren().addAll(imageView, text);
     }
     
     @FXML
     public void giveRedCardLocal() {
         TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text name = new Text(teamOne.getName() + "\n");
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
         ImageView imageView = new ImageView("projetihm/images/red-card.png");
 
-        textFlowLocal.getChildren().addAll(imageView, name);
+        textFlowLocal.getChildren().addAll(imageView, text);
     }
     
     @FXML
     public void expulserLocal() {
         TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text name = new Text(teamOne.getName() + "\n");
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
         ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
 
-        textFlowLocal.getChildren().addAll(imageView, name);
+        textFlowLocal.getChildren().addAll(imageView, text);
+    }
+    
+    @FXML
+    public void giveYellowCardVisitor() {
+        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/yellow-card.png");
+
+        textFlowVisitor.getChildren().addAll(imageView, text);
+    }
+    
+    @FXML
+    public void giveRedCardVisitor() {
+        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/red-card.png");
+
+        textFlowVisitor.getChildren().addAll(imageView, text);
+    }
+    
+    @FXML
+    public void expulserVisitor() {
+        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
+        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
+        ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
+
+        textFlowVisitor.getChildren().addAll(imageView, text);
     }
 }

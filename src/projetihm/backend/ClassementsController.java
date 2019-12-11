@@ -23,6 +23,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -90,11 +91,13 @@ public class ClassementsController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
-                + "ou bien match en direct pour manipuler les donnes en direct ";
+        String s ="Classement des equipes de differentes ligues.";
         alert.setContentText(s);
         alert.show();
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);

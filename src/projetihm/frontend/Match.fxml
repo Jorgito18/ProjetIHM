@@ -60,7 +60,7 @@
                   </ImageView>
                   <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                      <Image url="@../images/parametresImg.png" />
+                      <Image url="@../images/settings.png" />
                     </image>
                   </ImageView>
                 </children>
@@ -147,6 +147,19 @@
                   <TableColumn fx:id="visitorColCard" prefWidth="92.0" text="Cartes" />
                   <TableColumn fx:id="visitorColName" prefWidth="185.0" text="Nom" />
               </columns>
+         <contextMenu>
+            <ContextMenu>
+               <items>
+                  <Menu mnemonicParsing="false" text="Affecter une carte...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#giveYellowCardVisitor" text="Carte jaune" />
+                        <MenuItem mnemonicParsing="false" onAction="#giveRedCardVisitor" text="Carte rouge" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#expulserVisitor" text="Expulser" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
             </TableView>
             <TableView layoutX="538.0" layoutY="236.0" prefHeight="404.0" prefWidth="293.0" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0">
               <columns>
@@ -164,7 +177,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Pane layoutX="539.0" layoutY="205.0" prefHeight="5.0" prefWidth="293.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0" />
+            <Pane layoutX="539.0" layoutY="205.0" prefHeight="5.0" prefWidth="293.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="490.0" />
             <MenuBar layoutX="337.0" layoutY="19.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
               <menus>
                 <Menu mnemonicParsing="false" text="Menu">
@@ -194,7 +207,7 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
+            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.rightAnchor="11.0" />
             <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
       <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="-3.0">
          <children>
@@ -277,7 +290,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
+      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.rightAnchor="11.0" />
       <ScrollPane layoutX="68.0" layoutY="691.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="68.0" AnchorPane.topAnchor="691.0">
          <content>
             <TextFlow fx:id="textFlowLocal" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
