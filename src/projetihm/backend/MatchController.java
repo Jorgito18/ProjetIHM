@@ -42,6 +42,7 @@ import projetihm.backend.tables.TeamTwoTableModel;
  */
 public class MatchController implements Initializable {
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";
+    public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";
     final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
     private int localGoal = 0;
     private int visitorGoal = 0;
@@ -75,6 +76,11 @@ public class MatchController implements Initializable {
         labelTm.setVisible(false);
         retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
         retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
+    }
+    
+    @FXML
+    public void openAsClassement() {
+        redirectFromMatch(CLASEMENTS);
     }
     
     @FXML
