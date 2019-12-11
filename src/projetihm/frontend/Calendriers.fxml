@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -36,7 +34,6 @@
       </children>
     </VBox>
     <Separator layoutX="69.0" layoutY="51.0" prefWidth="1129.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="5.0" />
-    <TabPane layoutX="1017.0" layoutY="179.0" prefHeight="584.0" prefWidth="236.0" tabClosingPolicy="UNAVAILABLE" />
       <Label layoutX="118.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Calendriers">
          <font>
             <Font name="System Bold" size="25.0" />
@@ -47,50 +44,6 @@
             <Image url="@../images/lnh-logo_petit.png" />
          </image>
       </ImageView>
-      <TabPane layoutX="51.0" layoutY="77.0" prefHeight="686.0" prefWidth="1207.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0">
-        <tabs>
-            <Tab text="                     Proligue                        ">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
-                     <children>
-                        <TableView fx:id="tableProligue" prefHeight="659.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn fx:id="colNameProligue" prefWidth="292.0" text="NOM" />
-                              <TableColumn fx:id="colPtsProligue" prefWidth="197.0" text="PTS" />
-                              <TableColumn fx:id="colVictProligue" prefWidth="324.0" text="VICT" />
-                           </columns>
-                        </TableView>
-                        <TableView layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn prefWidth="441.0" text="Joueurs" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-          <Tab text="                     Lidl Starligue                        ">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
-                     <children>
-                        <TableView fx:id="tableStarligue" prefHeight="658.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn fx:id="colNameStarligue" prefWidth="211.99996948242188" text="NOM" />
-                              <TableColumn fx:id="colPtsStarligue" prefWidth="277.0" text="PTS" />
-                              <TableColumn fx:id="colVictStarligue" prefWidth="324.0" text="VICT" />
-                           </columns>
-                        </TableView>
-                        <TableView layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TableColumn prefWidth="439.0" text="Joueurs" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-               </content>
-          </Tab>
-        </tabs>
-      </TabPane>
       <Pane layoutY="698.0" prefHeight="66.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
          <children>
             <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="16.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
@@ -101,6 +54,82 @@
             <Separator layoutX="-10.0" layoutY="12.0" prefHeight="3.0" prefWidth="62.0" />
          </children>
       </Pane>
-      <DatePicker layoutX="532.0" layoutY="19.0" prefHeight="25.0" prefWidth="291.0" />
+      <Pane layoutX="120.0" layoutY="138.0" prefHeight="921.0" prefWidth="1275.0">
+         <children>
+            <Pane layoutX="-2.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="178.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="358.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="538.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="718.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="898.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="-2.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="178.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="358.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="538.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="718.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="898.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="-2.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="178.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="358.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="538.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="718.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="898.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="-2.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="178.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="358.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="538.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="718.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="898.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="-2.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="178.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="358.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="538.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="718.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="898.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="1078.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="1078.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="1078.0" layoutY="370.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="1078.0" layoutY="550.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Pane layoutX="1078.0" layoutY="730.0" prefHeight="200.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000;" />
+            <Separator layoutX="7.0" layoutY="3.0" prefHeight="21.0" prefWidth="1263.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="126.0" layoutY="60.0" prefHeight="47.0" prefWidth="1263.0" style="-fx-background-color: #FFFFFF;">
+         <padding>
+            <Insets left="340.0" right="311.0" />
+         </padding>
+         <children>
+            <Label layoutX="14.0" layoutY="-1.0" prefHeight="49.0" prefWidth="167.0" text="Décembre">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="958.0" layoutY="11.0" prefHeight="25.0" prefWidth="291.0" />
+            <Label layoutX="258.0" layoutY="15.0" />
+            <Label layoutX="181.0" layoutY="-1.0" prefHeight="49.0" prefWidth="87.0" text=" 2019">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="127.0" layoutY="55.0" prefHeight="3.0" prefWidth="1263.0" style="-fx-background-color: #204ba0;" />
+      <TextField layoutX="433.0" layoutY="14.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" />
+      <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="921.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/search.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="127.0" layoutY="113.0" prefHeight="36.0" prefWidth="1263.0">
+         <children>
+            <Label layoutX="65.0" layoutY="10.0" text="Lundi" />
+            <Label layoutX="250.0" layoutY="10.0" text="Mardi" />
+            <Label layoutX="443.0" layoutY="10.0" text="Mercredi" />
+            <Label layoutX="618.0" layoutY="10.0" text="Jeudi" />
+            <Label layoutX="783.0" layoutY="10.0" text="Vendredi" />
+            <Label layoutX="972.0" layoutY="10.0" text="Samedi" />
+            <Label layoutX="1138.0" layoutY="10.0" text="Dimanche" />
+         </children>
+      </Pane>
   </children>
 </AnchorPane>
