@@ -29,6 +29,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -58,6 +59,8 @@ public class MatchController implements Initializable {
     @FXML private Label labelTm;
     @FXML private TextFlow textFlowLocal;
     @FXML private TextFlow textFlowVisitor;
+    @FXML private Pane tirsPane;
+    @FXML private ImageView but;
 
     @FXML private TableView<TeamOneTableModel> tableLocal;
     @FXML private TableColumn<TeamOneTableModel, String> localColName;
@@ -76,6 +79,7 @@ public class MatchController implements Initializable {
         labelTm.setVisible(false);
         retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
         retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
+        
     }
     
     @FXML
@@ -180,7 +184,9 @@ public class MatchController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Le match en direct pour effectuer qui sauvegarde la statistique a partir des donnees enregistrees.";
+        String s ="Le match en direct pour effectuer la sauvegarde de statistiques a partir des donnees enregistrees."
+                + "Contient des tableaux avec les joueurs des 2 equipes et les événements pour chacun."
+                + "";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

@@ -42,7 +42,8 @@ public class LoginController {
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
         String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
-                + "ou bien match en direct pour manipuler les donnes en direct ";
+                + "ou bien match en direct pour manipuler les donnes en direct. "
+                + "Un login est nécessaire pour accéder a cettes fonctionnalités en tant que travailleur de la LNH";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

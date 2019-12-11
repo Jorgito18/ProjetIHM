@@ -55,11 +55,26 @@ public class ClassementsController implements Initializable {
     private TableColumn<StarligueTableModel, Integer> colVictStarligue;
     @FXML
     private ImageView retour;
+    @FXML
+    private ImageView toCalendriers;
         
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";
+    public static final String CALENDRIERS = "/projetihm/frontend/Calendriers.fxml";
+    public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
     
+    
+
+    @FXML
+    public void openAsCalendriers() {
+        redirectFromClassements(CALENDRIERS);
+    }
+    
+    @FXML
+    public void openAsDirect() {
+        redirectFromClassements(MATCH_DIRECT);
+    }
     @FXML
     public void openAsLogin() {
         redirectFromClassements(LOGIN);
