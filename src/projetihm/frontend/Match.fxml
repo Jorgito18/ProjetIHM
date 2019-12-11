@@ -20,26 +20,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.MatchController"> 
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.MatchController"> 
         <children>
-      <Pane layoutX="492.0" layoutY="546.0" prefHeight="246.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
+      <Pane layoutX="492.0" layoutY="527.0" prefHeight="532.0" prefWidth="1002.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
          <children>
-            <ImageView fitHeight="74.0" fitWidth="166.0" layoutX="19.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="386.0" fitWidth="406.0" layoutX="-61.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/gaucheT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="74.0" fitWidth="166.0" layoutX="224.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="169.0" fitWidth="414.0" layoutX="685.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/droiteT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="115.0" fitWidth="149.0" layoutX="128.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="210.0" fitWidth="352.0" layoutX="335.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/centreT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="92.0" fitWidth="152.0" layoutX="135.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="178.0" fitWidth="264.0" layoutX="375.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/but.png" />
                </image>
@@ -48,24 +48,24 @@
       </Pane>
       <Pane layoutX="360.0" layoutY="74.0" prefHeight="64.0" prefWidth="587.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="311.0">
          <children>
-                  <Label fx:id="labelTm" layoutX="413.0" layoutY="-5.0" text="TM" underline="true">
+                  <Label fx:id="labelTm" layoutX="738.0" layoutY="-10.0" text="TM" underline="true">
                      <font>
                         <Font size="51.0" />
                      </font>
                   </Label>
-                  <Label layoutX="290.0" layoutY="6.0" text=":">
+                  <Label layoutX="615.0" layoutY="1.0" text=":">
                      <font>
-                        <Font size="35.0" />
+                        <Font size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="seconde" layoutX="309.0" layoutY="7.0" text="00">
+                  <Label fx:id="seconde" layoutX="634.0" layoutY="2.0" text="00">
                      <font>
-                        <Font size="35.0" />
+                        <Font size="45.0" />
                      </font>
                   </Label>
-                  <Label fx:id="minute" layoutX="240.0" layoutY="7.0" text="00">
+                  <Label fx:id="minute" layoutX="557.0" layoutY="2.0" text="00">
                      <font>
-                        <Font size="35.0" />
+                        <Font size="45.0" />
                      </font>
                   </Label>
          </children>
@@ -129,17 +129,17 @@
             </ImageView>
             <Pane layoutX="64.0" layoutY="141.0" prefHeight="56.0" prefWidth="1188.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0">
                <children>
-                  <Button fx:id="demarrer" layoutX="481.0" layoutY="16.0" mnemonicParsing="false" onAction="#chronoDemarrer" style="-fx-background-color: #12e02a;" text="Démarrer">
+                  <Button fx:id="demarrer" layoutX="752.0" layoutY="9.0" mnemonicParsing="false" onAction="#chronoDemarrer" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #12e02a;" text="Démarrer">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="arreter" layoutX="572.0" layoutY="16.0" mnemonicParsing="false" onAction="#stopTimer" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #db1616;" text="Arreter">
+                  <Button fx:id="arreter" layoutX="884.0" layoutY="8.0" mnemonicParsing="false" onAction="#stopTimer" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #db1616;" text="Arreter">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="tm" layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#pauseTimer" style="-fx-background-color: #f2ff00;" text="T.M.">
+                  <Button fx:id="tm" layoutX="1014.0" layoutY="9.0" mnemonicParsing="false" onAction="#pauseTimer" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #f2ff00;" text="T.M.">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -191,13 +191,13 @@
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView layoutX="520.0" layoutY="236.0" prefHeight="255.0" prefWidth="345.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="457.0">
+            <TableView layoutX="492.0" layoutY="239.0" prefHeight="255.0" prefWidth="404.0" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
               <columns>
-                <TableColumn prefWidth="153.0" text="Poste" />
-                  <TableColumn prefWidth="190.0" text="Nom" />
+                <TableColumn prefWidth="496.0" text="Poste" />
+                  <TableColumn prefWidth="505.0" text="Nom" />
               </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="518.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="345.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0">
+            <Label alignment="CENTER" layoutX="492.0" layoutY="209.0" minHeight="21.0" prefHeight="30.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -207,7 +207,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Pane layoutX="518.0" layoutY="205.0" prefHeight="5.0" prefWidth="345.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0" />
+            <Pane layoutX="492.0" layoutY="206.0" prefHeight="5.0" prefWidth="404.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0" />
             <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
             <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
       <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
@@ -285,12 +285,12 @@
       <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
       <ScrollPane layoutX="68.0" layoutY="691.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="68.0" AnchorPane.topAnchor="691.0">
          <content>
-            <TextFlow fx:id="textFlowLocal" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
+            <TextFlow fx:id="textFlowLocal" prefHeight="373.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
       <ScrollPane layoutX="948.0" layoutY="692.0" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="691.0">
          <content>
-            <TextFlow fx:id="textFlowVisitor" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
+            <TextFlow fx:id="textFlowVisitor" prefHeight="376.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
       <TextField layoutX="424.0" layoutY="12.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="420.0" />
@@ -299,11 +299,11 @@
             <Image url="@../images/search.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="491.0" layoutY="507.0" minHeight="21.0" prefHeight="30.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" text="Tirs">
+      <Label alignment="CENTER" layoutX="492.0" layoutY="497.0" minHeight="21.0" prefHeight="30.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" text="Positionnement des tirs" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="491.0" layoutY="504.0" prefHeight="5.0" prefWidth="404.0" style="-fx-background-color: #787373;" />
+      <Pane layoutX="492.0" layoutY="494.0" prefHeight="5.0" prefWidth="404.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0" />
         </children>
     </AnchorPane>

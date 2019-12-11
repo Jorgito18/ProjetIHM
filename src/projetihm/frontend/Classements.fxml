@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,13 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.ClassementsController">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.ClassementsController">
   <children>
     <VBox fx:id="sideMenu" prefHeight="698.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <Pane prefHeight="764.0" prefWidth="51.0">
           <children>
-            <ImageView fx:id="retour" fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="22.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="retour" fitHeight="30.0" fitWidth="30.0" layoutX="11.0" layoutY="14.0" onMouseClicked="#openAsLogin" pickOnBounds="true" preserveRatio="true">
               <image>
                 <Image url="@../images/left-arrow.png" />
               </image>
@@ -32,6 +30,17 @@
                 <Image url="@../images/settings.png" />
               </image>
             </ImageView>
+                  <ImageView fx:id="toMatch" fitHeight="47.0" fitWidth="51.0" layoutX="1.0" layoutY="124.0" onMouseClicked="#openAsDirect" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/handball.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="-10.0" layoutY="48.0" prefHeight="3.0" prefWidth="62.0" />
+                  <ImageView fx:id="toCalendriers" fitHeight="47.0" fitWidth="47.0" layoutX="1.0" layoutY="183.0" onMouseClicked="#openAsCalendriers" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar.png" />
+                     </image>
+                  </ImageView>
           </children>
         </Pane>
       </children>
@@ -56,9 +65,9 @@
                      <children>
                         <TableView fx:id="tableProligue" prefHeight="659.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn fx:id="colNameProligue" prefWidth="292.0" text="NOM" />
-                              <TableColumn fx:id="colPtsProligue" prefWidth="197.0" text="PTS" />
-                              <TableColumn fx:id="colVictProligue" prefWidth="324.0" text="VICT" />
+                              <TableColumn fx:id="colNameProligue" prefWidth="609.0" text="NOM" />
+                              <TableColumn fx:id="colPtsProligue" prefWidth="156.0" text="PTS" />
+                              <TableColumn fx:id="colVictProligue" prefWidth="664.0" text="VICT" />
                            </columns>
                         </TableView>
                         <TableView layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -99,41 +108,19 @@
                   <Image url="@../images/help_image.png" />
                </image>
             </ImageView>
+            <Separator layoutX="-10.0" layoutY="12.0" prefHeight="3.0" prefWidth="62.0" />
          </children>
       </Pane>
-      <Label layoutX="1159.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="160.0" style="" text="Utilisateur: jan clop">
+      <Label layoutX="1685.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="221.0" style="" text="Utilisateur: jan clop">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <MenuBar layoutX="415.0" layoutY="17.0" prefHeight="19.0" prefWidth="270.0" style="-fx-background-color: #f0f0f0;">
-         <menus>
-            <Menu mnemonicParsing="false" text="Menu">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Actions">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Fenêtre">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Outils">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Aide">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
+      <TextField layoutX="380.0" layoutY="14.0" prefHeight="30.0" prefWidth="508.0" promptText="Chercher" />
+      <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="896.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/search.png" />
+         </image>
+      </ImageView>
   </children>
 </AnchorPane>
