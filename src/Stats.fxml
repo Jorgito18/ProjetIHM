@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="596.0" prefWidth="1029.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="projetihm.backend.StatsController">
+  <children>
+    <AnchorPane layoutY="0.0" prefHeight="48.0" prefWidth="939.0" style="-fx-background-color: #1860ae" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Label alignment="CENTER" layoutY="7.0" text="Statistique" textFill="WHITE" AnchorPane.leftAnchor="402.0" AnchorPane.rightAnchor="402.0">
+          <font>
+            <Font size="25.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+    <PieChart id="PieChart" fx:id="chartLocal" prefHeight="430.0" prefWidth="466.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="549.0" AnchorPane.topAnchor="93.0" />
+    <PieChart id="PieChart" fx:id="chartVisitor" prefHeight="430.0" prefWidth="458.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="557.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="93.0" />
+  </children>
+</AnchorPane>
