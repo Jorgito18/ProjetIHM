@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -23,6 +22,30 @@
 
 <AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1258.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.MatchController"> 
         <children>
+      <Pane layoutX="492.0" layoutY="546.0" prefHeight="246.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
+         <children>
+            <ImageView fitHeight="74.0" fitWidth="166.0" layoutX="19.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/gaucheT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="74.0" fitWidth="166.0" layoutX="224.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/droiteT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="115.0" fitWidth="149.0" layoutX="128.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@../images/centreT.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="152.0" layoutX="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/but.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
       <Pane layoutX="360.0" layoutY="74.0" prefHeight="64.0" prefWidth="587.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="311.0">
          <children>
                   <Label fx:id="labelTm" layoutX="413.0" layoutY="-5.0" text="TM" underline="true">
@@ -170,8 +193,8 @@
             </TableView>
             <TableView layoutX="520.0" layoutY="236.0" prefHeight="255.0" prefWidth="345.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="457.0">
               <columns>
-                <TableColumn prefWidth="108.0" text="Poste" />
-                  <TableColumn prefWidth="184.0" text="Nom" />
+                <TableColumn prefWidth="153.0" text="Poste" />
+                  <TableColumn prefWidth="190.0" text="Nom" />
               </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="518.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="345.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0">
@@ -185,35 +208,6 @@
                </font>
             </Label>
             <Pane layoutX="518.0" layoutY="205.0" prefHeight="5.0" prefWidth="345.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="459.0" />
-            <MenuBar layoutX="331.0" layoutY="14.0" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #f0f0f0;">
-              <menus>
-                <Menu mnemonicParsing="false" text="Menu">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Actions">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Fenêtre">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Outils">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Aide">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                     </items>
-                  </Menu>
-              </menus>
-            </MenuBar>
             <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
             <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
       <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
@@ -246,12 +240,12 @@
         <Pane layoutX="64.0" layoutY="69.0" prefHeight="5.0" prefWidth="1188.0" style="-fx-background-color: #204ba0;" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="6.0" />
       <Pane layoutX="65.0" layoutY="141.0" prefHeight="56.0" prefWidth="241.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="65.0">
          <children>
-                  <Button layoutX="103.0" layoutY="9.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="+">
+                  <Button layoutX="85.0" layoutY="9.0" mnemonicParsing="false" onAction="#incrementLocalGoal" text="+">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
+                  <Button layoutX="26.0" layoutY="9.0" mnemonicParsing="false" onAction="#decrementLocalGoal" text="-">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -277,13 +271,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Joueurs penalises d'Equipe Locale" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Locale" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
       <Pane layoutX="68.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
-      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Joueurs penalises d'Equipe Visitante" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
+      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Visitante" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="22.0" />
          </font>
@@ -299,30 +293,17 @@
             <TextFlow fx:id="textFlowVisitor" prefHeight="89.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
-      <TextField layoutX="641.0" layoutY="12.0" prefHeight="30.0" prefWidth="397.0" promptText="Chercher" />
-      <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="1038.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+      <TextField layoutX="424.0" layoutY="12.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="420.0" />
+      <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="912.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="389.0">
          <image>
             <Image url="@../images/search.png" />
          </image>
       </ImageView>
-      <Pane layoutX="484.0" layoutY="546.0" prefHeight="237.0" prefWidth="412.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <ImageView fitHeight="74.0" fitWidth="212.0" layoutX="-27.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-               <image>
-                  <Image url="@../images/gaucheT.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="89.0" fitWidth="187.0" layoutX="252.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-               <image>
-                  <Image url="@../images/droiteT.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-               <image>
-                  <Image url="@../images/centreT.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Label alignment="CENTER" layoutX="491.0" layoutY="507.0" minHeight="21.0" prefHeight="30.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" text="Tirs">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Pane layoutX="491.0" layoutY="504.0" prefHeight="5.0" prefWidth="404.0" style="-fx-background-color: #787373;" />
         </children>
     </AnchorPane>
