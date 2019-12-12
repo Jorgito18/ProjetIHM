@@ -34,6 +34,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import static projetihm.backend.ClassementsController.LOGIN;
+import projetihm.backend.sql.SqlConnectionImpl;
 import projetihm.backend.tables.TeamOneTableModel;
 import projetihm.backend.tables.TeamTwoTableModel;
 
@@ -50,6 +52,16 @@ public class MatchController implements Initializable {
     private boolean threadFlag = false;
     private String lastMinuteValue = null;
     private String lastSecondsValue = null;
+    
+    private int cjaunesLocal = 0;
+    private int crougesLocal = 0;
+    private int nbtirsLocal = 0;
+    private int nbexpulsionLocal = 0;
+    
+    private int cjaunesVisitor = 0;
+    private int crougesVisitor = 0;
+    private int nbtirsVisitor = 0;
+    private int nbexpulsionVisitor = 0;
     
     @FXML private ImageView retour;
     @FXML private Label minute;
@@ -74,12 +86,13 @@ public class MatchController implements Initializable {
     @FXML private TableColumn<TeamTwoTableModel, Integer> visitorColNumber;
     @FXML private TableColumn<TeamTwoTableModel, String> visitorColCard;
     
+    SqlConnectionImpl connectionImpl = new SqlConnectionImpl();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         labelTm.setVisible(false);
         retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
-        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
-        
+        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");   
     }
     
     @FXML
@@ -372,10 +385,26 @@ public class MatchController implements Initializable {
     
     @FXML
     public void expulserVisitor() {
-        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
+        TeamTwoTableModel teamTwo = tableVisitor.getSelectionModel().getSelectedItem();
+        Text text = new Text(" " + teamTwo.getName() + " N" + teamTwo.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
         ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
 
         textFlowVisitor.getChildren().addAll(imageView, text);
+    }
+     
+    public void gatherGoalLocal() {
+        connectionImpl.insertData("STATS_PARIS", LOGIN, 0, 0, 0, 0, 0, 0);
+    }    
+        
+    public void gatherTirsLocal() {
+        
+    }
+        
+    public void gatherYellowCardsLocal() {
+        
+    }
+    
+    public void gatherRedCardsLoccal() {
+        
     }
 }

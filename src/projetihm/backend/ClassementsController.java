@@ -27,8 +27,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import projetihm.backend.sql.SqlConnectionImpl;
 import projetihm.backend.tables.ProligueTableModel;
 import projetihm.backend.tables.StarligueTableModel;
+import projetihm.backend.tables.TablePlayers;
 
 /**
  * FXML Controller class
@@ -57,14 +59,28 @@ public class ClassementsController implements Initializable {
     private ImageView retour;
     @FXML
     private ImageView toCalendriers;
-        
+    
+    @FXML
+    private TableView<TablePlayers> tablePlayers;
+    @FXML
+    private TableColumn<TablePlayers, String> colPlayer;
+
+    @FXML
+    private TableView<TablePlayers> tablePlayers2;
+    @FXML
+    private TableColumn<TablePlayers, String> colPlayers2;
+    
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";
     public static final String CALENDRIERS = "/projetihm/frontend/Calendriers.fxml";
     public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
+    public static final String STATISTICS = "/projetihm/frontend/Stats.fxml";
     
-    
+    @FXML
+    public void openAsStatistics() {
+        redirectFromClassements(STATISTICS);
+    }
 
     @FXML
     public void openAsCalendriers() {
@@ -117,6 +133,8 @@ public class ClassementsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);
         retrieveDataStarligue(STARLIGUE_DRIVER_PATH);
+        retrieveTablePlayers(PROLIGUE_DRIVER_PATH);
+        retrieveTablePlayersTwo(PROLIGUE_DRIVER_PATH);
     }
 
     public void retrieveDataProligue(String driverPath) {
@@ -148,7 +166,7 @@ public class ClassementsController implements Initializable {
         tableProligue.setItems(list); 
     }
     
-        public void retrieveDataStarligue(String driverPath) {
+    public void retrieveDataStarligue(String driverPath) {
         ObservableList<StarligueTableModel> list = FXCollections.observableArrayList();
 
         /* establish connection */
@@ -177,5 +195,57 @@ public class ClassementsController implements Initializable {
         tableStarligue.setItems(list); 
     }
     
+    
+    public void retrieveTablePlayers(String driverPath) {
+        ObservableList<TablePlayers> list = FXCollections.observableArrayList();
+
+        /* establish connection */
+        try (Connection connection = DriverManager.getConnection(driverPath);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select NOM from TABLE_TOULOUSE")) {
+
+            /* get data from database */
+            while (resultSet.next()) {
+                list.add(new TablePlayers(resultSet.getString("NOM")));
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        
+        /* display retrieved data from database in TableView columns */
+        try {
+
+            colPlayer.setCellValueFactory(new PropertyValueFactory<>("name"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tablePlayers.setItems(list); 
+    }
+    
+        public void retrieveTablePlayersTwo(String driverPath) {
+        ObservableList<TablePlayers> list = FXCollections.observableArrayList();
+
+        /* establish connection */
+        try (Connection connection = DriverManager.getConnection(driverPath);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select NOM from TABLE_PARIS")) {
+
+            /* get data from database */
+            while (resultSet.next()) {
+                list.add(new TablePlayers(resultSet.getString("NOM")));
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        
+        /* display retrieved data from database in TableView columns */
+        try {
+
+            colPlayers2.setCellValueFactory(new PropertyValueFactory<>("name"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tablePlayers2.setItems(list); 
+    }
 }
 
