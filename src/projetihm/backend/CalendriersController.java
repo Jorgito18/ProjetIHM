@@ -17,8 +17,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import static projetihm.backend.MatchController.CLASEMENTS;
-import static projetihm.backend.MatchController.LOGIN;
 
 /**
  * FXML Controller class

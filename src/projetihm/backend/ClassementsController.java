@@ -11,9 +11,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -69,6 +71,8 @@ public class ClassementsController implements Initializable {
     private TableView<TablePlayers> tablePlayers2;
     @FXML
     private TableColumn<TablePlayers, String> colPlayers2;
+    
+    @FXML private ImageView help;
     
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
@@ -131,6 +135,9 @@ public class ClassementsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        help.setOnMouseClicked(e -> showHelp());
+        
+        
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);
         retrieveDataStarligue(STARLIGUE_DRIVER_PATH);
         retrieveTablePlayers(PROLIGUE_DRIVER_PATH);
@@ -185,7 +192,6 @@ public class ClassementsController implements Initializable {
         
         /* display retrieved data from database in TableView columns */
         try {
-
             colNameStarligue.setCellValueFactory(new PropertyValueFactory<>("teamName"));
             colPtsStarligue.setCellValueFactory(new PropertyValueFactory<>("pts"));
             colVictStarligue.setCellValueFactory(new PropertyValueFactory<>("vict"));

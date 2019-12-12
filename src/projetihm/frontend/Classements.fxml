@@ -108,7 +108,7 @@
       </TabPane>
       <Pane layoutY="698.0" prefHeight="66.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
          <children>
-            <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="16.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/help_image.png" />
                </image>
