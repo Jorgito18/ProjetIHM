@@ -56,7 +56,7 @@
       </Pane>
       <Pane layoutX="120.0" layoutY="138.0" prefHeight="921.0" prefWidth="1275.0">
          <children>
-            <Pane layoutX="-2.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="25">
                      <font>
@@ -64,7 +64,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="178.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="136.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="26">
                      <font>
@@ -72,7 +72,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="358.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="134.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="27">
                      <font>
@@ -80,7 +80,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="538.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="131.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="28">
                      <font>
@@ -88,7 +88,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="718.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="29">
                      <font>
@@ -96,7 +96,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="898.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="30">
                      <font>
@@ -104,7 +104,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="-2.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="2">
                      <font>
@@ -112,7 +112,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="178.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="142.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="3">
                      <font>
@@ -120,7 +120,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="358.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="138.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="4">
                      <font>
@@ -128,7 +128,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="538.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="145.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="5">
                      <font>
@@ -136,7 +136,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="718.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="131.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="6">
                      <font>
@@ -144,7 +144,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="898.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="135.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="7">
                      <font>
@@ -152,7 +152,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="-2.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="9">
                      <font>
@@ -160,7 +160,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="178.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="136.0" layoutY="14.0" prefHeight="36.0" prefWidth="47.0" text="10">
                      <font>
@@ -168,7 +168,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="358.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="11">
                      <font>
@@ -176,7 +176,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="538.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="12">
                      <font>
@@ -184,7 +184,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="718.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="13">
                      <font>
@@ -192,7 +192,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="898.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="14">
                      <font>
@@ -200,7 +200,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="-2.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="16">
                      <font>
@@ -208,7 +208,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="178.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="17">
                      <font>
@@ -216,7 +216,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="358.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="18">
                      <font>
@@ -224,7 +224,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="538.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="19">
                      <font>
@@ -232,7 +232,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="718.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="20">
                      <font>
@@ -240,7 +240,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="898.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="21">
                      <font>
@@ -248,7 +248,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="-2.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="23">
                      <font>
@@ -256,7 +256,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="178.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="24">
                      <font>
@@ -264,7 +264,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="358.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="25">
                      <font>
@@ -272,7 +272,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="538.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="26">
                      <font>
@@ -280,7 +280,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="718.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="27">
                      <font>
@@ -288,7 +288,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="898.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="28">
                      <font>
@@ -296,7 +296,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="1078.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="11.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="1">
                      <font>
@@ -304,7 +304,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="1078.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="153.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="8">
                      <font>
@@ -312,7 +312,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="1078.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="295.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="132.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="15">
                      <font>
@@ -320,7 +320,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="1078.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="437.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="22">
                      <font>
@@ -328,7 +328,7 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Pane layoutX="1078.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="581.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #bdd5ff; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="29">
                      <font>
@@ -337,7 +337,7 @@
                   </Label>
                </children></Pane>
             <Separator layoutX="7.0" layoutY="3.0" prefHeight="21.0" prefWidth="1263.0" />
-            <Pane layoutX="-2.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="-2.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="30">
                      <font>
@@ -346,7 +346,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="178.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="178.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="31">
                      <font>
@@ -355,7 +355,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="358.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="358.0" layoutY="725.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="1">
                      <font>
@@ -364,7 +364,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="538.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="538.0" layoutY="725.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="2">
                      <font>
@@ -373,7 +373,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="718.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="718.0" layoutY="725.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="3">
                      <font>
@@ -382,7 +382,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="898.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="898.0" layoutY="725.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="4">
                      <font>
@@ -391,7 +391,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="1078.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
+            <Pane layoutX="1078.0" layoutY="725.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="5">
                      <font>
@@ -412,7 +412,7 @@
                   <Font name="System Bold" size="33.0" />
                </font>
             </Label>
-            <DatePicker layoutX="958.0" layoutY="11.0" prefHeight="25.0" prefWidth="291.0" />
+            <DatePicker layoutX="914.0" layoutY="11.0" prefHeight="25.0" prefWidth="315.0" />
             <Label layoutX="258.0" layoutY="15.0" />
             <Label layoutX="181.0" layoutY="-1.0" prefHeight="49.0" prefWidth="87.0" text=" 2019">
                <font>
@@ -421,7 +421,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="127.0" layoutY="55.0" prefHeight="3.0" prefWidth="1263.0" style="-fx-background-color: #204ba0;" />
+      <Pane layoutX="126.0" layoutY="55.0" prefHeight="3.0" prefWidth="1263.0" style="-fx-background-color: #204ba0;" />
       <TextField layoutX="433.0" layoutY="14.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" />
       <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="921.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -430,14 +430,46 @@
       </ImageView>
       <Pane layoutX="127.0" layoutY="113.0" prefHeight="36.0" prefWidth="1263.0">
          <children>
-            <Label layoutX="65.0" layoutY="10.0" text="Lundi" />
-            <Label layoutX="250.0" layoutY="10.0" text="Mardi" />
-            <Label layoutX="443.0" layoutY="10.0" text="Mercredi" />
-            <Label layoutX="618.0" layoutY="10.0" text="Jeudi" />
-            <Label layoutX="783.0" layoutY="10.0" text="Vendredi" />
-            <Label layoutX="972.0" layoutY="10.0" text="Samedi" />
-            <Label layoutX="1138.0" layoutY="10.0" text="Dimanche" />
+            <Label layoutX="65.0" layoutY="10.0" text="Lundi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="250.0" layoutY="10.0" text="Mardi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="443.0" layoutY="10.0" text="Mercredi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="618.0" layoutY="10.0" text="Jeudi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="783.0" layoutY="10.0" text="Vendredi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="972.0" layoutY="10.0" text="Samedi">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="1138.0" layoutY="10.0" text="Dimanche">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
          </children>
       </Pane>
+      <Pane layoutX="1395.0" layoutY="60.0" prefHeight="47.0" prefWidth="510.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="8.0" layoutY="-1.0" text="Événements du jour">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1395.0" layoutY="55.0" prefHeight="3.0" prefWidth="510.0" style="-fx-background-color: #204ba0;" />
+      <Pane layoutX="1395.0" layoutY="114.0" prefHeight="901.0" prefWidth="510.0" style="-fx-background-color: #FFFFFF;" />
   </children>
 </AnchorPane>
