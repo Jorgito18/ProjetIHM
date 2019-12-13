@@ -309,7 +309,6 @@ public class MatchController implements Initializable {
             localColName.setCellValueFactory(new PropertyValueFactory<>("name"));
             localColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
             localColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
-            localColCard.setCellValueFactory(new PropertyValueFactory<>("cartes"));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -336,7 +335,6 @@ public class MatchController implements Initializable {
             visitorColName.setCellValueFactory(new PropertyValueFactory<>("name"));
             visitorColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
             visitorColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
-            visitorColCard.setCellValueFactory(new PropertyValueFactory<>("cartes"));
         } catch (Exception e) {
             e.printStackTrace();
         }

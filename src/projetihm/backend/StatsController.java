@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -64,6 +66,17 @@ public class StatsController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    public void showHelp(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Aide");
+        alert.setHeaderText("Page d'accueil");
+        String s ="Classement des equipes de differentes ligues.";
+        alert.setContentText(s);
+        alert.show();
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
     
     private void initChartLocal() {
