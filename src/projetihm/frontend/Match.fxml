@@ -301,7 +301,7 @@
             <TextFlow fx:id="textFlowVisitor" prefHeight="376.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
-      <TextField layoutX="424.0" layoutY="12.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="420.0" />
+      <TextField layoutX="424.0" layoutY="12.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher sur l'application" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="420.0" />
       <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="912.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="389.0">
          <image>
             <Image url="@../images/search.png" />
