@@ -161,9 +161,9 @@
             </Pane>
             <TableView fx:id="tableLocal" layoutX="68.0" layoutY="238.0" prefHeight="404.0" prefWidth="400.0" stylesheets="@../backend/Tables_match.css" AnchorPane.leftAnchor="68.0">
               <columns>
-                <TableColumn fx:id="localColNumber" prefWidth="30.0" text="N º" />
-                  <TableColumn fx:id="localColinGame" prefWidth="86.99996948242188" text="Joue" />
-                  <TableColumn fx:id="localColName" prefWidth="283.0000305175781" text="Nom" />
+                <TableColumn fx:id="localColNumber" prefWidth="42.999969482421875" text="N º" />
+                  <TableColumn fx:id="localColinGame" prefWidth="100.0" text="Joue" />
+                  <TableColumn fx:id="localColName" prefWidth="258.0000305175781" text="Nom" />
               </columns>
          <contextMenu>
             <ContextMenu>
@@ -181,9 +181,9 @@
             </TableView>
             <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="236.0" prefHeight="404.0" prefWidth="395.0" stylesheets="@../backend/Tables_match.css" AnchorPane.rightAnchor="11.0">
               <columns>
-                <TableColumn fx:id="visitorColNumber" prefWidth="30.0" text="N º" />
-                  <TableColumn fx:id="visitorColinGame" prefWidth="71.0" text="Joue" />
-                  <TableColumn fx:id="visitorColName" prefWidth="293.0" text="Nom" />
+                <TableColumn fx:id="visitorColNumber" prefWidth="45.0" text="N º" />
+                  <TableColumn fx:id="visitorColinGame" prefWidth="76.0" text="Joue" />
+                  <TableColumn fx:id="visitorColName" prefWidth="273.0" text="Nom" />
               </columns>
          <contextMenu>
             <ContextMenu>

@@ -1,7 +1,8 @@
 
 .table-cell {     
-    -fx-padding: 0.8em 0.8em 0.1em 0.5em;
+    -fx-padding: 0.8em 0.8em 0.8em 0.8em;
     -fx-border-color: -fx-box-border -fx-box-border transparent transparent;  
+    -fx-border-width: 0 ;
     -fx-font:20px "Verdana";    
     -fx-border-insets: 0;
     -fx-alignment: center;
@@ -9,11 +10,11 @@
 }
 
 .table-cell:hover {
-    -fx-background-color: #1860ae;
+    -fx-background-color: rgba(28, 183, 236, 0.25);
 }
 
 .table-row-cell:empty, .table-cell:empty:hover {
-    -fx-background-color: whitesmoke;
+    -fx-background-color: white;
 }
  
 .table-row-cell:empty .table-cell {
@@ -21,15 +22,15 @@
 }
   
 .table-view:row-selection .table-row-cell:filled:hover { 
-    -fx-background-color: rgba(28, 183, 236, 0.25);
+    -fx-background-color: rgba(24, 96, 174, 0.5);
 }
 
 .table-view:row-selection .table-row-cell:filled:selected:hover { 
-    -fx-background-color: rgba(228, 183, 236, 0.90);
+    -fx-background-color: rgba(24, 96, 174, 0.5);
 }
 
 .table-view:row-selection .table-row-cell:filled:selected { 
-    -fx-background-color: rgba(28, 183, 236, 0.65);
+    -fx-background-color: rgba(24, 96, 174, 1);
 }
 
 .table-view, .table-view:focused {
@@ -41,6 +42,7 @@
 .table-view .column-header .label{
     -fx-text-fill: #52677A;
     -fx-alignment: CENTER;
+    -fx-font:20px "Verdana"; 
 }
 
 .table-view .column-header:hover {
@@ -59,9 +61,5 @@
     -fx-background-color: transparent;
 }
 
-.table-view .show-hide-columns-button {
-    -fx-background-color: white;
-    -fx-border-color: -fx-box-border;
-    -fx-border-insets: 0;
-}
+
 
