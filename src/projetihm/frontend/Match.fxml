@@ -191,7 +191,7 @@
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="236.0" prefHeight="404.0" prefWidth="395.0" stylesheets="@../backend/Tables_match.css" AnchorPane.rightAnchor="11.0">
+            <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="240.0" prefHeight="400.0" prefWidth="395.0" stylesheets="@../backend/Tables_match.css" AnchorPane.rightAnchor="11.0">
               <columns>
                 <TableColumn fx:id="visitorColNumber" prefWidth="75.0" text="Joue" />
                   <TableColumn fx:id="visitorColinGame" prefWidth="46.0" text="N º" />
@@ -231,7 +231,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text="Toulouse" AnchorPane.rightAnchor="11.0">
+            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="32.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text="Toulouse" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -300,7 +300,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Utilisateur: jan clop" AnchorPane.rightAnchor="-1.0">
+      <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Utilisateur: Jean Clop" AnchorPane.rightAnchor="-1.0">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
