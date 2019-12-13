@@ -1,6 +1,6 @@
 
 .table-cell {     
-    -fx-padding: 0.4em 0.4em 0.4em 0.4em;
+    -fx-padding: 0.5em 0.5em 0.5em 0.5em;
     -fx-border-color: -fx-box-border -fx-box-border transparent transparent;  
     -fx-border-width: 0 ;
     -fx-font:15px "Verdana";    
