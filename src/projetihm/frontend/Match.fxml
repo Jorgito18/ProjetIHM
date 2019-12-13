@@ -68,6 +68,16 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
+            <Label layoutX="443.0" layoutY="2.0" text="1">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <Label layoutX="467.0" layoutY="14.0" text="ere">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
          <padding>
             <Insets left="340.0" right="311.0" />

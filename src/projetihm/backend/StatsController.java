@@ -72,7 +72,7 @@ public class StatsController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Classement des equipes de differentes ligues.";
+        String s ="Les 2 pie charts montrent les statistiques plus remarcables de chaque équipe pour un match";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

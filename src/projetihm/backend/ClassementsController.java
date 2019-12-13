@@ -99,6 +99,7 @@ public class ClassementsController implements Initializable {
             Stage mainStage = (Stage) retour.getScene().getWindow();
             
             stage.setTitle("Association Française d'Handball");
+            stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
             stage.setScene(new Scene(parent));
             
             stage.show();
@@ -113,7 +114,8 @@ public class ClassementsController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Classement des equipes de differentes ligues.";
+        String s ="Classement des equipes de differentes ligues. \n \n"
+                + "Montre aussi les statistiques des joueurs de chaque équipe et les meilleurs joueurs de chaque ligue";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

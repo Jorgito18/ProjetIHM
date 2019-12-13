@@ -63,7 +63,8 @@ public class CalendriersController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Calendriers");
-        String s ="Cette fenetre montre le calendrier des match des ligues de handball.";
+        String s ="Cette fenetre montre le calendrier des match des ligues de handball. \n \n"
+                + "Pour un jour selectionné, les événements pour chaque heure se montrent";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

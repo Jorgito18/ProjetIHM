@@ -202,9 +202,9 @@ public class MatchController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Le match en direct pour effectuer la sauvegarde de statistiques a partir des donnees enregistrees."
-                + "Contient des tableaux avec les joueurs des 2 equipes et les événements pour chacun."
-                + "";
+        String s ="Le match en direct pour éffectuer la sauvegarde de statistiques à partir des données enregistrées. \n \n"
+                + "Contient des tableaux avec les joueurs des 2 equipes et les événements pour chacun. \n \n"
+                + "Permet de enregistrer les actions des joueurs dans le match tels que les buts ou les tirs";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();

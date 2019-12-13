@@ -54,7 +54,7 @@
             <Separator layoutX="-10.0" layoutY="12.0" prefHeight="3.0" prefWidth="62.0" />
          </children>
       </Pane>
-      <Pane layoutX="61.0" layoutY="131.0" prefHeight="921.0" prefWidth="1275.0">
+      <Pane layoutX="61.0" layoutY="131.0" prefHeight="921.0" prefWidth="1275.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Pane layoutX="-2.0" layoutY="11.0" opacity="0.6" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #cfcfcf; -fx-border-color: #cfcfcf;">
                <children>
@@ -391,7 +391,6 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Separator layoutX="7.0" layoutY="3.0" prefHeight="21.0" prefWidth="1263.0" />
             <Pane layoutX="-2.0" layoutY="725.0" prefHeight="160.0" prefWidth="200.0" scaleX="0.9" scaleY="0.9" style="-fx-background-color: #FFFFFF; -fx-border-color: #4285F4;">
                <children>
                   <Label layoutX="137.0" layoutY="15.0" prefHeight="36.0" prefWidth="47.0" text="30">
@@ -457,7 +456,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane layoutX="67.0" layoutY="60.0" prefHeight="47.0" prefWidth="1263.0" style="-fx-background-color: #FFFFFF;">
+      <Pane layoutX="61.0" layoutY="60.0" prefHeight="47.0" prefWidth="1275.0" style="-fx-background-color: #FFFFFF;">
          <padding>
             <Insets left="340.0" right="311.0" />
          </padding>
@@ -476,48 +475,53 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="67.0" layoutY="55.0" prefHeight="3.0" prefWidth="1263.0" style="-fx-background-color: #204ba0;" />
+      <Pane layoutX="61.0" layoutY="55.0" prefHeight="3.0" prefWidth="1275.0" style="-fx-background-color: #204ba0;" />
       <TextField layoutX="433.0" layoutY="14.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" />
       <ImageView fitHeight="30.0" fitWidth="21.0" layoutX="921.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/search.png" />
          </image>
       </ImageView>
-      <Pane layoutX="73.0" layoutY="113.0" prefHeight="36.0" prefWidth="1263.0">
+      <Pane layoutX="61.0" layoutY="113.0" prefHeight="36.0" prefWidth="1275.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Label layoutX="65.0" layoutY="10.0" text="Lundi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="250.0" layoutY="10.0" text="Mardi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="443.0" layoutY="10.0" text="Mercredi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="618.0" layoutY="10.0" text="Jeudi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="783.0" layoutY="10.0" text="Vendredi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="972.0" layoutY="10.0" text="Samedi">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
             <Label layoutX="1138.0" layoutY="10.0" text="Dimanche">
                <font>
-                  <Font size="15.0" />
+                  <Font size="19.0" />
                </font></Label>
          </children>
       </Pane>
       <Pane layoutX="1342.0" layoutY="60.0" prefHeight="47.0" prefWidth="563.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="8.0" layoutY="-1.0" prefHeight="49.0" prefWidth="542.0" text="Événements du jour: 14 Décembre">
+            <Label layoutX="8.0" layoutY="-1.0" prefHeight="49.0" prefWidth="324.0" text="Événements du jour -">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="-1.0" text="14 Décembre">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>
@@ -525,18 +529,33 @@
          </children>
       </Pane>
       <Pane layoutX="1342.0" layoutY="55.0" prefHeight="3.0" prefWidth="563.0" style="-fx-background-color: #204ba0;" />
-      <Pane layoutX="1342.0" layoutY="114.0" prefHeight="901.0" prefWidth="563.0" style="-fx-background-color: #FFFFFF;">
+      <Pane layoutX="1342.0" layoutY="114.0" prefHeight="939.0" prefWidth="563.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Separator layoutX="14.0" layoutY="107.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="83.0" text="12H 00" />
+            <Label layoutX="14.0" layoutY="83.0" text="12H 00">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
             <Separator layoutX="14.0" layoutY="294.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="270.0" text="20H 00" />
+            <Label layoutX="14.0" layoutY="270.0" text="20H 00">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
             <Separator layoutX="14.0" layoutY="185.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="161.0" text="18H 00" />
+            <Label layoutX="14.0" layoutY="161.0" text="18H 00">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
             <Separator layoutX="14.0" layoutY="486.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="462.0" text="21H 00" />
+            <Label layoutX="14.0" layoutY="462.0" text="21H 00">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
             <Separator layoutX="14.0" layoutY="718.0" prefWidth="200.0" />
-            <Label layoutX="14.0" layoutY="694.0" text="22H 00" />
+            <Label layoutX="14.0" layoutY="694.0" text="22H 00">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
             <Label layoutX="267.0" layoutY="13.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #d3b56f;" text=" LIDL Starligue">
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -552,62 +571,62 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="315.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Paris - Tremblay">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="315.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Paris - Tremblay   20H 00">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="66.0" layoutY="122.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Besançon - Pontault">
+            <Label alignment="CENTER" layoutX="66.0" layoutY="122.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Besançon - Pontault     12H 15">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="209.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Strasbourg - Saran">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="209.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Strasbourg - Saran   18H 30">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="357.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Nice - Valence">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="357.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Nice - Valence  20H 10">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="401.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Ivry - Chartres">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="401.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Ivry - Chartres   20H 30">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="505.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Dunkerque - Chambéry ">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="505.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Dunkerque - Chambéry    21H 00">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="550.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text=" Toulouse - Montpellier">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="550.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text=" Toulouse - Montpellier   21H30">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="597.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nantes - Aix">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="597.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nantes - Aix     21H 45">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="741.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Saint Raphael - Crétetil">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="741.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Saint Raphael - Crétetil   22H 00">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="781.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nimes - Istres">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="781.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nimes - Istres    22H 30">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="67.0" layoutY="643.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Massy - Cherbourg">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="643.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Massy - Cherbourg     21H 45">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="66.0" layoutY="827.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Limoges - Dijon">
+            <Label alignment="CENTER" layoutX="66.0" layoutY="827.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Limoges - Dijon    22H 30">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
