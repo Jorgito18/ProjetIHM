@@ -40,6 +40,7 @@ import projetihm.backend.tables.TablePlayers;
  * @author Jorge Ara
  */
 public class ClassementsController implements Initializable {
+    
     @FXML
     private TableView<ProligueTableModel> tableProligue;
     @FXML
@@ -80,6 +81,7 @@ public class ClassementsController implements Initializable {
     public static final String CALENDRIERS = "/projetihm/frontend/Calendriers.fxml";
     public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
     public static final String STATISTICS = "/projetihm/frontend/Stats.fxml";
+    
     
     @FXML
     public void openAsStatistics() {

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #f0f0f0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.ClassementsController">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #f0f0f0" stylesheets="@../backend/Tables.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetihm.backend.ClassementsController">
   <children>
     <VBox fx:id="sideMenu" prefHeight="698.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -62,22 +62,22 @@
             <Image url="@../images/lnh-logo_petit.png" />
          </image>
       </ImageView>
-      <TabPane layoutX="51.0" layoutY="77.0" prefHeight="686.0" prefWidth="1207.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0">
+      <TabPane layoutX="66.0" layoutY="59.0" prefHeight="1015.0" prefWidth="1850.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="59.0">
         <tabs>
             <Tab text="                     Proligue                        ">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <TableView fx:id="tableProligue" prefHeight="659.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="439.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableProligue" fixedCellSize="-5.0" layoutX="-1.0" layoutY="-1.0" prefHeight="919.0" prefWidth="1172.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="632.0" AnchorPane.topAnchor="-1.0">
                            <columns>
                               <TableColumn fx:id="colNameProligue" prefWidth="609.0" text="NOM" />
                               <TableColumn fx:id="colPtsProligue" prefWidth="156.0" text="PTS" />
                               <TableColumn fx:id="colVictProligue" prefWidth="664.0" text="VICT" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablePlayers" layoutX="814.0" prefHeight="659.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tablePlayers" layoutX="1225.0" prefHeight="965.0" prefWidth="575.0" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn fx:id="colPlayer" prefWidth="441.0" text="Joueurs" />
+                              <TableColumn fx:id="colPlayer" prefWidth="577.0" text="Joueurs" />
                            </columns>
                         </TableView>
                      </children>

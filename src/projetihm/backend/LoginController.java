@@ -61,7 +61,7 @@ public class LoginController {
             Parent parent = fxmlLoader.getRoot();
             Stage stage = new Stage(StageStyle.DECORATED);
             Stage mainStage = (Stage) classements.getScene().getWindow();
-
+            
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
             //stage.setResizable(false);

@@ -112,7 +112,7 @@
                   </Label>
           </children>
         </Pane>
-            <Label alignment="CENTER" layoutX="68.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Local" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+            <Label alignment="CENTER" layoutX="68.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="405.0" style="-fx-background-color: #FFFFFF;" text="Local" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -149,12 +149,12 @@
             <Insets left="64.0" right="6.0" />
          </padding>
             </Pane>
-            <TableView fx:id="tableLocal" layoutX="68.0" layoutY="238.0" prefHeight="404.0" prefWidth="362.0" AnchorPane.leftAnchor="68.0">
+            <TableView fx:id="tableLocal" layoutX="68.0" layoutY="238.0" prefHeight="404.0" prefWidth="405.0" stylesheets="@../backend/Tables_match.css" AnchorPane.leftAnchor="68.0">
               <columns>
-                <TableColumn fx:id="localColNumber" prefWidth="30.0" text="N º" />
-                  <TableColumn fx:id="localColinGame" prefWidth="77.0" text="Joue" />
-                  <TableColumn fx:id="localColCard" prefWidth="68.0" text="Cartes" />
-                  <TableColumn fx:id="localColName" prefWidth="186.0" text="Nom" />
+                <TableColumn fx:id="localColNumber" prefWidth="30.0" style="-fx-font-weight: bold;" text="N º" />
+                  <TableColumn fx:id="localColinGame" prefWidth="69.0" text="Joue" />
+                  <TableColumn fx:id="localColCard" prefWidth="114.00003051757812" text="Cartes" />
+                  <TableColumn fx:id="localColName" prefWidth="190.0" text="Nom" />
               </columns>
          <contextMenu>
             <ContextMenu>
@@ -170,12 +170,12 @@
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="236.0" prefHeight="404.0" prefWidth="362.0" AnchorPane.rightAnchor="11.0">
+            <TableView fx:id="tableVisitor" layoutX="885.0" layoutY="236.0" prefHeight="404.0" prefWidth="403.0" stylesheets="@../backend/Tables_match.css" AnchorPane.rightAnchor="11.0">
               <columns>
-                <TableColumn fx:id="visitorColNumber" prefWidth="30.0" text="N º" />
+                <TableColumn fx:id="visitorColNumber" prefWidth="30.0" style="-fx-font-weight: bold;" text="N º" />
                   <TableColumn fx:id="visitorColinGame" prefWidth="54.0" text="Joue" />
-                  <TableColumn fx:id="visitorColCard" prefWidth="92.0" text="Cartes" />
-                  <TableColumn fx:id="visitorColName" prefWidth="185.0" text="Nom" />
+                  <TableColumn fx:id="visitorColCard" prefWidth="120.0" text="Cartes" />
+                  <TableColumn fx:id="visitorColName" prefWidth="197.0" text="Nom" />
               </columns>
          <contextMenu>
             <ContextMenu>
@@ -191,7 +191,7 @@
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView layoutX="492.0" layoutY="239.0" prefHeight="255.0" prefWidth="404.0" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
+            <TableView layoutX="492.0" layoutY="239.0" prefHeight="255.0" prefWidth="404.0" stylesheets="@../backend/Tables_match.css" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
               <columns>
                 <TableColumn prefWidth="496.0" text="Poste" />
                   <TableColumn prefWidth="505.0" text="Nom" />
@@ -202,14 +202,14 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text=" Visitant" AnchorPane.rightAnchor="11.0">
+            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text=" Visitant" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
             <Pane layoutX="492.0" layoutY="206.0" prefHeight="5.0" prefWidth="404.0" style="-fx-background-color: #787373;" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0" />
-            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
-            <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
+            <Pane layoutX="885.0" layoutY="205.0" prefHeight="5.0" prefWidth="403.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
+            <Pane layoutX="67.0" layoutY="205.0" prefHeight="5.0" prefWidth="405.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
       <Pane layoutY="733.0" prefHeight="64.0" prefWidth="51.0" style="-fx-background-color: #1860ae;" AnchorPane.bottomAnchor="0.0">
          <children>
                   <ImageView fx:id="help" fitHeight="36.0" fitWidth="36.0" layoutX="8.0" layoutY="14.0" onMouseClicked="#showHelp" pickOnBounds="true" preserveRatio="true">
@@ -271,26 +271,26 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Locale" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="403.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Locale" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="68.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
-      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Visitante" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
+      <Pane layoutX="68.0" layoutY="653.0" prefHeight="5.0" prefWidth="403.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
+      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Visitante" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="362.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
+      <Pane layoutX="949.0" layoutY="653.0" prefHeight="5.0" prefWidth="400.0" style="-fx-background-color: #fa4d4d;" AnchorPane.rightAnchor="11.0" />
       <ScrollPane layoutX="68.0" layoutY="691.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="68.0" AnchorPane.topAnchor="691.0">
          <content>
-            <TextFlow fx:id="textFlowLocal" prefHeight="373.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
+            <TextFlow fx:id="textFlowLocal" prefHeight="373.0" prefWidth="401.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
       <ScrollPane layoutX="948.0" layoutY="692.0" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="691.0">
          <content>
-            <TextFlow fx:id="textFlowVisitor" prefHeight="376.0" prefWidth="362.0" style="-fx-background-color: #FFFFFF;" />
+            <TextFlow fx:id="textFlowVisitor" prefHeight="376.0" prefWidth="398.0" style="-fx-background-color: #FFFFFF;" />
          </content>
       </ScrollPane>
       <TextField layoutX="424.0" layoutY="12.0" prefHeight="30.0" prefWidth="478.0" promptText="Chercher" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="420.0" />
