@@ -24,22 +24,22 @@
         <children>
       <Pane layoutX="492.0" layoutY="527.0" prefHeight="532.0" prefWidth="1002.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
          <children>
-            <ImageView fitHeight="386.0" fitWidth="406.0" layoutX="-61.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="386.0" fitWidth="406.0" layoutX="-61.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/gaucheT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="169.0" fitWidth="414.0" layoutX="685.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="169.0" fitWidth="414.0" layoutX="685.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/droiteT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="210.0" fitWidth="352.0" layoutX="335.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fitHeight="178.0" fitWidth="352.0" layoutX="335.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/centreT.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="178.0" fitWidth="264.0" layoutX="375.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="178.0" fitWidth="264.0" layoutX="375.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/but.png" />
                </image>
