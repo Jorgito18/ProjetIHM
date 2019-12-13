@@ -537,12 +537,12 @@
             <Label layoutX="14.0" layoutY="462.0" text="21H 00" />
             <Separator layoutX="14.0" layoutY="718.0" prefWidth="200.0" />
             <Label layoutX="14.0" layoutY="694.0" text="22H 00" />
-            <Label layoutX="267.0" layoutY="13.0" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: #c00000;" text="LIDL Starligue">
+            <Label layoutX="267.0" layoutY="13.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #d3b56f;" text=" LIDL Starligue">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="434.0" layoutY="13.0" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #4285F4;" text="Proligue">
+            <Label layoutX="434.0" layoutY="13.0" prefHeight="30.0" prefWidth="97.0" style="-fx-background-color: #4285F4;" text=" Proligue">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -550,6 +550,66 @@
             <Label layoutX="157.0" layoutY="18.0" text="Légende:">
                <font>
                   <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="315.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Paris - Tremblay">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="66.0" layoutY="122.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Besançon - Pontault">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="209.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Strasbourg - Saran">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="357.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Nice - Valence">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="401.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Ivry - Chartres">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="505.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Dunkerque - Chambéry ">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="550.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text=" Toulouse - Montpellier">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="597.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nantes - Aix">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="741.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Saint Raphael - Crétetil">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="781.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #d3b56f;" text="Nimes - Istres">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="67.0" layoutY="643.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Massy - Cherbourg">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="66.0" layoutY="827.0" prefHeight="30.0" prefWidth="446.0" style="-fx-background-color: #4285F4;" text="Limoges - Dijon">
+               <font>
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
          </children></Pane>
