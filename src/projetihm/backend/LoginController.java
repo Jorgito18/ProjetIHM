@@ -6,9 +6,6 @@ package projetihm.backend;
  * and open the template in the editor.
  */
 
-
-
-import java.lang.reflect.Method;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -61,10 +58,10 @@ public class LoginController {
             Parent parent = fxmlLoader.getRoot();
             Stage stage = new Stage(StageStyle.DECORATED);
             Stage mainStage = (Stage) classements.getScene().getWindow();
-            
+
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
-            //stage.setResizable(false);
+            stage.setResizable(false);
             
             stage.show();
             stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));

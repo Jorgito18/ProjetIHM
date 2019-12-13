@@ -11,11 +11,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,9 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import projetihm.backend.sql.SqlConnectionImpl;
-import projetihm.backend.tables.ProligueTableModel;
-import projetihm.backend.tables.StarligueTableModel;
+import projetihm.backend.tables.LigueTableModel;
 import projetihm.backend.tables.TablePlayers;
 
 /**
@@ -40,38 +36,28 @@ import projetihm.backend.tables.TablePlayers;
  * @author Jorge Ara
  */
 public class ClassementsController implements Initializable {
+    @FXML private TableView<LigueTableModel> tableProligue;
+    @FXML private TableColumn<LigueTableModel, String> colNameProligue;
+    @FXML private TableColumn<LigueTableModel, Integer> colPtsProligue;
+    @FXML private TableColumn<LigueTableModel, Integer> colVictProligue;
     
-    @FXML
-    private TableView<ProligueTableModel> tableProligue;
-    @FXML
-    private TableColumn<ProligueTableModel, String> colNameProligue;
-    @FXML
-    private TableColumn<ProligueTableModel, Integer> colPtsProligue;
-    @FXML
-    private TableColumn<ProligueTableModel, Integer> colVictProligue;
+    @FXML private TableView<LigueTableModel> tableStarligue;
+    @FXML private TableColumn<LigueTableModel, String> colNameStarligue;
+    @FXML private TableColumn<LigueTableModel, Integer> colPtsStarligue;
+    @FXML private TableColumn<LigueTableModel, Integer> colVictStarligue;
+    @FXML private ImageView retour;
+    @FXML private ImageView toCalendriers;
     
-    @FXML
-    private TableView<StarligueTableModel> tableStarligue;
-    @FXML
-    private TableColumn<StarligueTableModel, String> colNameStarligue;
-    @FXML
-    private TableColumn<StarligueTableModel, Integer> colPtsStarligue;
-    @FXML
-    private TableColumn<StarligueTableModel, Integer> colVictStarligue;
-    @FXML
-    private ImageView retour;
-    @FXML
-    private ImageView toCalendriers;
-    
-    @FXML
-    private TableView<TablePlayers> tablePlayers;
-    @FXML
-    private TableColumn<TablePlayers, String> colPlayer;
+    @FXML private TableView<TablePlayers> tablePlayers;
+    @FXML private TableColumn<TablePlayers, String> colPlayersOne;
 
-    @FXML
-    private TableView<TablePlayers> tablePlayers2;
-    @FXML
-    private TableColumn<TablePlayers, String> colPlayers2;
+    @FXML private TableView<TablePlayers> tablePlayers2;
+    @FXML private TableColumn<TablePlayers, String> colPlayersTwo;
+    
+    @FXML private TableColumn<TablePlayers, String> colNumeroOne;
+    @FXML private TableColumn<TablePlayers, String> colButsOne;
+    @FXML private TableColumn<TablePlayers, String> colNumeroTwo;
+    @FXML private TableColumn<TablePlayers, String> colButsTwo;
     
     @FXML private ImageView help;
     
@@ -81,7 +67,6 @@ public class ClassementsController implements Initializable {
     public static final String CALENDRIERS = "/projetihm/frontend/Calendriers.fxml";
     public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
     public static final String STATISTICS = "/projetihm/frontend/Stats.fxml";
-    
     
     @FXML
     public void openAsStatistics() {
@@ -139,15 +124,14 @@ public class ClassementsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         help.setOnMouseClicked(e -> showHelp());
         
-        
         retrieveDataProligue(PROLIGUE_DRIVER_PATH);
         retrieveDataStarligue(STARLIGUE_DRIVER_PATH);
         retrieveTablePlayers(PROLIGUE_DRIVER_PATH);
         retrieveTablePlayersTwo(PROLIGUE_DRIVER_PATH);
     }
-
+    
     public void retrieveDataProligue(String driverPath) {
-        ObservableList<ProligueTableModel> list = FXCollections.observableArrayList();
+        ObservableList<LigueTableModel> list = FXCollections.observableArrayList();
 
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
@@ -156,7 +140,7 @@ public class ClassementsController implements Initializable {
 
             /* get data from database */
             while (resultSet.next()) {
-                list.add(new ProligueTableModel(resultSet.getString("NOM_EQUIPE"), resultSet.getInt("PTS"),
+                list.add(new LigueTableModel(resultSet.getString("NOM_EQUIPE"), resultSet.getInt("PTS"),
                     resultSet.getInt("VICT")));
             }
         } catch (Exception e) {
@@ -165,7 +149,6 @@ public class ClassementsController implements Initializable {
         
         /* display retrieved data from database in TableView columns */
         try {
-
             colNameProligue.setCellValueFactory(new PropertyValueFactory<>("teamName"));
             colPtsProligue.setCellValueFactory(new PropertyValueFactory<>("pts"));
             colVictProligue.setCellValueFactory(new PropertyValueFactory<>("vict"));
@@ -176,7 +159,7 @@ public class ClassementsController implements Initializable {
     }
     
     public void retrieveDataStarligue(String driverPath) {
-        ObservableList<StarligueTableModel> list = FXCollections.observableArrayList();
+        ObservableList<LigueTableModel> list = FXCollections.observableArrayList();
 
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
@@ -185,7 +168,7 @@ public class ClassementsController implements Initializable {
 
             /* get data from database */
             while (resultSet.next()) {
-                list.add(new StarligueTableModel(resultSet.getString("NOM_EQUIPE"), resultSet.getInt("PTS"),
+                list.add(new LigueTableModel(resultSet.getString("NOM_EQUIPE"), resultSet.getInt("PTS"),
                     resultSet.getInt("VICT")));
             }
         } catch (Exception e) {
@@ -210,11 +193,11 @@ public class ClassementsController implements Initializable {
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select NOM from TABLE_TOULOUSE")) {
+            ResultSet resultSet = statement.executeQuery("Select NOM, NUMERO, BUTS from TABLE_TOULOUSE")) {
 
             /* get data from database */
             while (resultSet.next()) {
-                list.add(new TablePlayers(resultSet.getString("NOM")));
+                list.add(new TablePlayers(resultSet.getString("NOM"), resultSet.getInt("NUMERO"), resultSet.getInt("BUTS")));
             }
         } catch (Exception e) {
                 e.printStackTrace();
@@ -223,7 +206,9 @@ public class ClassementsController implements Initializable {
         /* display retrieved data from database in TableView columns */
         try {
 
-            colPlayer.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colPlayersOne.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colNumeroOne.setCellValueFactory(new PropertyValueFactory<>("numero"));
+            colButsOne.setCellValueFactory(new PropertyValueFactory<>("goals"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -236,11 +221,11 @@ public class ClassementsController implements Initializable {
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select NOM from TABLE_PARIS")) {
+            ResultSet resultSet = statement.executeQuery("Select NOM, NUMERO, BUTS from TABLE_PARIS")) {
 
             /* get data from database */
             while (resultSet.next()) {
-                list.add(new TablePlayers(resultSet.getString("NOM")));
+                list.add(new TablePlayers(resultSet.getString("NOM"), resultSet.getInt("NUMERO"), resultSet.getInt("BUTS")));
             }
         } catch (Exception e) {
                 e.printStackTrace();
@@ -248,8 +233,9 @@ public class ClassementsController implements Initializable {
         
         /* display retrieved data from database in TableView columns */
         try {
-
-            colPlayers2.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colPlayersTwo.setCellValueFactory(new PropertyValueFactory<>("name"));
+            colNumeroTwo.setCellValueFactory(new PropertyValueFactory<>("numero"));
+            colButsTwo.setCellValueFactory(new PropertyValueFactory<>("goals"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -15,8 +15,8 @@ public class SqlConnectionImpl implements SqlConnection {
     public void createTable(String tableName) {
         try (Connection connection = DriverManager.getConnection(CONNECTION_URL_DIRECT_PART);
                 Statement statement = connection.createStatement()) {
-            statement.execute("CREATE TABLE IF NOT EXISTS " + tableName + " (ID INTEGER PRIMARY KEY, NOM VARCHAR(60),"
-                    + " NUMERO INTEGER, TIRS INTEGER, BUTS INTEGER, CJAUNES, CROUGES, EXPULSIONS)");
+            statement.execute("CREATE TABLE IF NOT EXISTS " + tableName + " (ID INTEGER PRIMARY KEY, POSTE VARCHAR(60),"
+                    + " NOM VARCHAR(60))");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -25,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -34,10 +35,9 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import static projetihm.backend.ClassementsController.LOGIN;
 import projetihm.backend.sql.SqlConnectionImpl;
-import projetihm.backend.tables.TeamOneTableModel;
-import projetihm.backend.tables.TeamTwoTableModel;
+import projetihm.backend.tables.AdministrationTableModel;
+import projetihm.backend.tables.TeamTableModel;
 
 /**
  *
@@ -74,17 +74,21 @@ public class MatchController implements Initializable {
     @FXML private Pane tirsPane;
     @FXML private ImageView but;
 
-    @FXML private TableView<TeamOneTableModel> tableLocal;
-    @FXML private TableColumn<TeamOneTableModel, String> localColName;
-    @FXML private TableColumn<TeamOneTableModel, String> localColinGame;
-    @FXML private TableColumn<TeamOneTableModel, Integer> localColNumber;
-    @FXML private TableColumn<TeamOneTableModel, String> localColCard;
+    @FXML private TableView<TeamTableModel> tableLocal;
+    @FXML private TableColumn<TeamTableModel, String> localColName;
+    @FXML private TableColumn<TeamTableModel, String> localColinGame;
+    @FXML private TableColumn<TeamTableModel, Integer> localColNumber;
+    @FXML private TableColumn<TeamTableModel, String> localColCard;
     
-    @FXML private TableView<TeamTwoTableModel> tableVisitor;
-    @FXML private TableColumn<TeamTwoTableModel, String> visitorColName;
-    @FXML private TableColumn<TeamTwoTableModel, String> visitorColinGame;
-    @FXML private TableColumn<TeamTwoTableModel, Integer> visitorColNumber;
-    @FXML private TableColumn<TeamTwoTableModel, String> visitorColCard;
+    @FXML private TableView<TeamTableModel> tableVisitor;
+    @FXML private TableColumn<TeamTableModel, String> visitorColName;
+    @FXML private TableColumn<TeamTableModel, String> visitorColinGame;
+    @FXML private TableColumn<TeamTableModel, Integer> visitorColNumber;
+    @FXML private TableColumn<TeamTableModel, String> visitorColCard;
+    
+    @FXML TableView<AdministrationTableModel> tableAdministration;
+    @FXML private TableColumn<AdministrationTableModel, String> colPoste;
+    @FXML private TableColumn<AdministrationTableModel, String> colNameAdminstration;
     
     SqlConnectionImpl connectionImpl = new SqlConnectionImpl();
     
@@ -92,7 +96,8 @@ public class MatchController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         labelTm.setVisible(false);
         retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
-        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");   
+        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
+        retrieveAdministrationTable("jdbc:sqlite:PROLIGUE_DB.db");
     }
     
     @FXML
@@ -283,7 +288,7 @@ public class MatchController implements Initializable {
     }
     
     public void retrieveDataLocal(String driverPath) {
-        ObservableList<TeamOneTableModel> list = FXCollections.observableArrayList();
+        ObservableList<TeamTableModel> list = FXCollections.observableArrayList();
 
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
@@ -292,7 +297,7 @@ public class MatchController implements Initializable {
 
             /* get data from database */
             while (resultSet.next()) {
-                list.add(new TeamOneTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
+                list.add(new TeamTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
                     resultSet.getString("EN_JEU"), resultSet.getString("CARTES")));
             }
         } catch (Exception e) {
@@ -313,14 +318,14 @@ public class MatchController implements Initializable {
     }
    
     public void retrieveDataVisitor(String driverPath) {
-        ObservableList<TeamTwoTableModel> list = FXCollections.observableArrayList();
+        ObservableList<TeamTableModel> list = FXCollections.observableArrayList();
 
         try (Connection connection = DriverManager.getConnection(driverPath);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("Select * from TABLE_TOULOUSE")) {
 
             while (resultSet.next()) {
-                list.add(new TeamTwoTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
+                list.add(new TeamTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
                     resultSet.getString("EN_JEU"), resultSet.getString("CARTES")));
             }
         } catch (Exception e) {
@@ -338,58 +343,83 @@ public class MatchController implements Initializable {
         tableVisitor.setItems(list); 
     } 
     
+    public void retrieveAdministrationTable(String driverPath) {
+        ObservableList<AdministrationTableModel> list = FXCollections.observableArrayList();
+
+        try (Connection connection = DriverManager.getConnection(driverPath);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("Select * from TABLE_ADMINISTRATION")) {
+
+            while (resultSet.next()) {
+                list.add(new AdministrationTableModel(resultSet.getString("POSTE"), resultSet.getString("NOM")));
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        
+        try {
+            colPoste.setCellValueFactory(new PropertyValueFactory<>("poste"));
+            colNameAdminstration.setCellValueFactory(new PropertyValueFactory<>("name"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        tableAdministration.setItems(list); 
+    } 
+    
+    @FXML
+    public void registerAction(TableView table, String actionType, TextFlow textFlow) {
+        TeamTableModel team = (TeamTableModel) table.getSelectionModel().getSelectedItem();
+        Text text = new Text(" № " +  + team.getNumber() + " " + team.getName() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
+       
+        table.setRowFactory(tv -> new TableRow<TeamTableModel>() {
+        @Override
+        protected void updateItem(TeamTableModel item, boolean empty) {
+            super.updateItem(item, empty);
+            setStyle("-fx-background-color: #baffba;");
+            }
+        });
+        
+        ImageView image = null;
+        
+        if (actionType.equalsIgnoreCase("yellowCard")) {
+            image = new ImageView("projetihm/images/yellow-card.png");
+        } else if (actionType.equalsIgnoreCase("redCard")) {
+            image = new ImageView("projetihm/images/red-card.png");
+        } else if (actionType.equalsIgnoreCase("expulsion")) {
+            image = new ImageView("projetihm/images/stopwatch.png");
+        }
+
+        textFlow.getChildren().addAll(image, text);
+    }
+    
     @FXML
     public void giveYellowCardLocal() {
-        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/yellow-card.png");
-
-        textFlowLocal.getChildren().addAll(imageView, text);
+        registerAction(tableLocal, "yellowCard", textFlowLocal);
     }
     
     @FXML
     public void giveRedCardLocal() {
-        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/red-card.png");
-
-        textFlowLocal.getChildren().addAll(imageView, text);
+        registerAction(tableLocal, "redCard", textFlowLocal);
     }
     
     @FXML
     public void expulserLocal() {
-        TeamOneTableModel teamOne = tableLocal.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
-
-        textFlowLocal.getChildren().addAll(imageView, text);
+        registerAction(tableLocal, "expulsion", textFlowLocal);
     }
     
     @FXML
     public void giveYellowCardVisitor() {
-        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/yellow-card.png");
-
-        textFlowVisitor.getChildren().addAll(imageView, text);
+        registerAction(tableVisitor, "yellowCard", textFlowVisitor);
     }
     
     @FXML
     public void giveRedCardVisitor() {
-        TeamTwoTableModel teamOne = tableVisitor.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamOne.getName() + " N" + teamOne.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/red-card.png");
-
-        textFlowVisitor.getChildren().addAll(imageView, text);
+        registerAction(tableVisitor, "redCard", textFlowVisitor);
     }
     
     @FXML
     public void expulserVisitor() {
-        TeamTwoTableModel teamTwo = tableVisitor.getSelectionModel().getSelectedItem();
-        Text text = new Text(" " + teamTwo.getName() + " N" + teamTwo.getNumber() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-        ImageView imageView = new ImageView("projetihm/images/stopwatch.png");
-
-        textFlowVisitor.getChildren().addAll(imageView, text);
+        registerAction(tableVisitor, "expulsion", textFlowVisitor);
     }
      
     public void gatherGoalLocal() {
