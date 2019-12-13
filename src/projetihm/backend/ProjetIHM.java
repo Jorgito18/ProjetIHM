@@ -1,12 +1,12 @@
 package projetihm.backend;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 
 public class ProjetIHM extends Application {
     private static final String TABLE_VISITORS = "visitant";
@@ -30,9 +30,7 @@ public class ProjetIHM extends Application {
         stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
     }
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         launch(args);
     }

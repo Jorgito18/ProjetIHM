@@ -1,7 +1,6 @@
 
 package projetihm.backend;
 
-
 public class Constants {
     public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
     public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";

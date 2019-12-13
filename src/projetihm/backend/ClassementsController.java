@@ -27,7 +27,6 @@ import javafx.stage.StageStyle;
 import projetihm.backend.tables.LigueTableModel;
 import projetihm.backend.tables.TablePlayers;
 
-
 public class ClassementsController implements Initializable {
     @FXML private TableView<LigueTableModel> tableProligue;
     @FXML private TableColumn<LigueTableModel, String> colNameProligue;

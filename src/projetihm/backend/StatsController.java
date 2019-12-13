@@ -18,11 +18,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+
 public class StatsController implements Initializable {
     @FXML private PieChart chartLocal;
     @FXML private PieChart chartVisitor;
     @FXML private ImageView retour;
     
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        initChartLocal();
