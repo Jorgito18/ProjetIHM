@@ -110,19 +110,24 @@
           <Separator layoutX="69.0" layoutY="51.0" prefWidth="1129.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="5.0" />
         <Pane layoutX="64.0" layoutY="74.0" prefHeight="64.0" prefWidth="333.0" style="-fx-background-color: #FFFFFF" AnchorPane.leftAnchor="64.0">
           <children>
-                  <Label fx:id="labelLocalGoal" layoutX="119.0" layoutY="5.0" text="0">
+                  <Label fx:id="labelLocalGoal" layoutX="179.0" layoutY="5.0" text="0">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="22.0" layoutY="15.0" prefHeight="31.0" prefWidth="63.0" text="Local">
+                  <Label layoutX="22.0" layoutY="15.0" prefHeight="31.0" prefWidth="63.0" text="Paris">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
+            <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/paris.png" />
+               </image>
+            </ImageView>
           </children>
         </Pane>
-            <Label alignment="CENTER" layoutX="68.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" text="Local" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+            <Label alignment="CENTER" layoutX="68.0" layoutY="208.0" minHeight="21.0" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" text="Paris" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -210,7 +215,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text=" Visitant" AnchorPane.rightAnchor="11.0">
+            <Label alignment="CENTER" layoutX="885.0" layoutY="207.0" minHeight="21.0" prefHeight="30.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text="Toulouse" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -267,11 +272,16 @@
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label layoutX="121.0" layoutY="15.0" prefHeight="35.0" prefWidth="117.0" text="Visitant">
+                  <Label layoutX="48.0" layoutY="15.0" prefHeight="35.0" prefWidth="117.0" text="Toulouse">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
+            <ImageView fitHeight="64.0" fitWidth="63.0" layoutX="174.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Toulouse.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Label layoutX="1163.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="212.0" style="" text="Utilisateur: jan clop" AnchorPane.rightAnchor="-1.0">
@@ -279,13 +289,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Locale" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
+      <Label alignment="CENTER" layoutX="69.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF;" text="Événements Paris" textAlignment="JUSTIFY" AnchorPane.leftAnchor="68.0">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
       <Pane layoutX="68.0" layoutY="653.0" prefHeight="5.0" prefWidth="400.0" style="-fx-background-color: #00a2dd;" AnchorPane.leftAnchor="68.0" />
-      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text="Événements d'Equipe Visitante" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
+      <Label alignment="CENTER" layoutX="950.0" layoutY="656.0" minHeight="21.0" prefHeight="36.0" prefWidth="395.0" style="-fx-background-color: #FFFFFF;" text="Événements Toulouse" textAlignment="JUSTIFY" AnchorPane.rightAnchor="11.0">
          <font>
             <Font size="22.0" />
          </font>
