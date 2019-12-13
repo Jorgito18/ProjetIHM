@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,30 +63,23 @@ public class ClassementsController implements Initializable {
     
     @FXML private ImageView help;
     
-    public static final String PROLIGUE_DRIVER_PATH = "jdbc:sqlite:PROLIGUE_DB.db";
-    public static final String STARLIGUE_DRIVER_PATH = "jdbc:sqlite:STARLIGUE_DB.db";
-    public static final String LOGIN = "/projetihm/frontend/Login.fxml";
-    public static final String CALENDRIERS = "/projetihm/frontend/Calendriers.fxml";
-    public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
-    public static final String STATISTICS = "/projetihm/frontend/Stats.fxml";
-    
     @FXML
     public void openAsStatistics() {
-        redirectFromClassements(STATISTICS);
+        redirectFromClassements(Constants.STATISTICS);
     }
 
     @FXML
     public void openAsCalendriers() {
-        redirectFromClassements(CALENDRIERS);
+        redirectFromClassements(Constants.CALENDRIERS);
     }
     
     @FXML
     public void openAsDirect() {
-        redirectFromClassements(MATCH_DIRECT);
+        redirectFromClassements(Constants.MATCH_DIRECT);
     }
     @FXML
     public void openAsLogin() {
-        redirectFromClassements(LOGIN);
+        redirectFromClassements(Constants.LOGIN);
     }
     
     @FXML
@@ -99,7 +94,6 @@ public class ClassementsController implements Initializable {
             Stage mainStage = (Stage) retour.getScene().getWindow();
             
             stage.setTitle("Association Française d'Handball");
-            stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));
             stage.setScene(new Scene(parent));
             
             stage.show();
@@ -114,8 +108,7 @@ public class ClassementsController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Classement des equipes de differentes ligues. \n \n"
-                + "Montre aussi les statistiques des joueurs de chaque équipe et les meilleurs joueurs de chaque ligue";
+        String s ="Classement des equipes de differentes ligues.";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
@@ -125,15 +118,35 @@ public class ClassementsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         help.setOnMouseClicked(e -> showHelp());
-        
-        retrieveDataProligue(PROLIGUE_DRIVER_PATH);
-        retrieveDataStarligue(STARLIGUE_DRIVER_PATH);
-        retrieveTablePlayers(PROLIGUE_DRIVER_PATH);
-        retrieveTablePlayersTwo(PROLIGUE_DRIVER_PATH);
+        List<TableColumn> columnsProligue = new ArrayList<>();
+        columnsProligue.add(colNameProligue);
+        columnsProligue.add(colPtsProligue);
+        columnsProligue.add(colVictProligue);
+        List<TableColumn> columnsStarligue = new ArrayList<>();
+        columnsStarligue.add(colNameStarligue);
+        columnsStarligue.add(colPtsStarligue);
+        columnsStarligue.add(colVictStarligue);
+        List<TableColumn> columnsPlayersLocal = new ArrayList<>();
+        columnsPlayersLocal.add(colPlayersOne);
+        columnsPlayersLocal.add(colNumeroOne);
+        columnsPlayersLocal.add(colButsOne);
+        List<TableColumn> columnsPlayersVisitor = new ArrayList<>();
+        columnsPlayersVisitor.add(colPlayersTwo);
+        columnsPlayersVisitor.add(colNumeroTwo);
+        columnsPlayersVisitor.add(colButsTwo);
+
+        retrieveLeague(tableProligue, Constants.PROLIGUE_DRIVER_PATH, columnsProligue);
+        retrieveLeague(tableStarligue, Constants.STARLIGUE_DRIVER_PATH, columnsStarligue);
+        retreievePlayers("TABLE_TOULOUSE", tablePlayers, columnsPlayersLocal);
+        retreievePlayers("TABLE_PARIS", tablePlayers2, columnsPlayersVisitor);
     }
     
-    public void retrieveDataProligue(String driverPath) {
+    public void retrieveLeague(TableView table, String driverPath, List<TableColumn> columns) {
         ObservableList<LigueTableModel> list = FXCollections.observableArrayList();
+        List<String> columnNames = new ArrayList<>();
+        columnNames.add("teamName");
+        columnNames.add("pts");
+        columnNames.add("vict");
 
         /* establish connection */
         try (Connection connection = DriverManager.getConnection(driverPath);
@@ -148,54 +161,29 @@ public class ClassementsController implements Initializable {
         } catch (Exception e) {
                 e.printStackTrace();
         }
-        
+
         /* display retrieved data from database in TableView columns */
         try {
-            colNameProligue.setCellValueFactory(new PropertyValueFactory<>("teamName"));
-            colPtsProligue.setCellValueFactory(new PropertyValueFactory<>("pts"));
-            colVictProligue.setCellValueFactory(new PropertyValueFactory<>("vict"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        tableProligue.setItems(list); 
-    }
-    
-    public void retrieveDataStarligue(String driverPath) {
-        ObservableList<LigueTableModel> list = FXCollections.observableArrayList();
-
-        /* establish connection */
-        try (Connection connection = DriverManager.getConnection(driverPath);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * from EQUIPES")) {
-
-            /* get data from database */
-            while (resultSet.next()) {
-                list.add(new LigueTableModel(resultSet.getString("NOM_EQUIPE"), resultSet.getInt("PTS"),
-                    resultSet.getInt("VICT")));
+            for (int i = 0; i < columns.size(); i++) {
+                columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columnNames.get(i)));
             }
         } catch (Exception e) {
-                e.printStackTrace();
-        }
-        
-        /* display retrieved data from database in TableView columns */
-        try {
-            colNameStarligue.setCellValueFactory(new PropertyValueFactory<>("teamName"));
-            colPtsStarligue.setCellValueFactory(new PropertyValueFactory<>("pts"));
-            colVictStarligue.setCellValueFactory(new PropertyValueFactory<>("vict"));
-        } catch (Exception e) {
             e.printStackTrace();
         }
-        tableStarligue.setItems(list); 
+        table.setItems(list); 
     }
     
-    
-    public void retrieveTablePlayers(String driverPath) {
+    public void retreievePlayers(String tableName, TableView table, List<TableColumn> columns) {
         ObservableList<TablePlayers> list = FXCollections.observableArrayList();
+        List<String> columnNames = new ArrayList<>();
+        columnNames.add("name");
+        columnNames.add("numero");
+        columnNames.add("goals");
 
         /* establish connection */
-        try (Connection connection = DriverManager.getConnection(driverPath);
+        try (Connection connection = DriverManager.getConnection(Constants.PROLIGUE_DRIVER_PATH);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select NOM, NUMERO, BUTS from TABLE_TOULOUSE")) {
+            ResultSet resultSet = statement.executeQuery("Select NOM, NUMERO, BUTS from " + tableName)) {
 
             /* get data from database */
             while (resultSet.next()) {
@@ -207,41 +195,13 @@ public class ClassementsController implements Initializable {
         
         /* display retrieved data from database in TableView columns */
         try {
-
-            colPlayersOne.setCellValueFactory(new PropertyValueFactory<>("name"));
-            colNumeroOne.setCellValueFactory(new PropertyValueFactory<>("numero"));
-            colButsOne.setCellValueFactory(new PropertyValueFactory<>("goals"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        tablePlayers.setItems(list); 
-    }
-    
-        public void retrieveTablePlayersTwo(String driverPath) {
-        ObservableList<TablePlayers> list = FXCollections.observableArrayList();
-
-        /* establish connection */
-        try (Connection connection = DriverManager.getConnection(driverPath);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select NOM, NUMERO, BUTS from TABLE_PARIS")) {
-
-            /* get data from database */
-            while (resultSet.next()) {
-                list.add(new TablePlayers(resultSet.getString("NOM"), resultSet.getInt("NUMERO"), resultSet.getInt("BUTS")));
+            for (int i = 0; i < columns.size(); i++) {
+                columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columnNames.get(i)));
             }
         } catch (Exception e) {
-                e.printStackTrace();
-        }
-        
-        /* display retrieved data from database in TableView columns */
-        try {
-            colPlayersTwo.setCellValueFactory(new PropertyValueFactory<>("name"));
-            colNumeroTwo.setCellValueFactory(new PropertyValueFactory<>("numero"));
-            colButsTwo.setCellValueFactory(new PropertyValueFactory<>("goals"));
-        } catch (Exception e) {
             e.printStackTrace();
         }
-        tablePlayers2.setItems(list); 
+        table.setItems(list); 
     }
 }
 

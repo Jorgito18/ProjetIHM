@@ -18,19 +18,16 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class LoginController {
-    public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";
-    public static final String MATCH_DIRECT = "/projetihm/frontend/Match.fxml";
-    
     @FXML private Button classements;
     
     @FXML
     public void openAsClassement() {
-        redirectFromLogin(CLASEMENTS);
+        redirectFromLogin(Constants.CLASEMENTS);
     }
 
     @FXML
     public void openAsDirect() {
-        redirectFromLogin(MATCH_DIRECT);
+        redirectFromLogin(Constants.MATCH_DIRECT);
     }
     
     @FXML
@@ -38,9 +35,9 @@ public class LoginController {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Choisir entre le mode classements nationaux pour voir les clasements et statistiques des équipes et joueurs. \n \n"
-                + "Match en direct pour manipuler les données en direct.\n \n"
-                + "Une identification est nécessaire pour accéder a ces fonctionnalités en tant que travailleur de la LNH";
+        String s ="Chosir entre le mode classements nationaux pour voir les clasemets et statistique des equipes et jouers, "
+                + "ou bien match en direct pour manipuler les donnes en direct. "
+                + "Un login est nécessaire pour accéder a cettes fonctionnalités en tant que travailleur de la LNH";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
@@ -61,6 +58,7 @@ public class LoginController {
 
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
+            stage.setResizable(false);
             
             stage.show();
             stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));

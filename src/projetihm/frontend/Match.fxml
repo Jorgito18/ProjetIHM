@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -180,6 +182,11 @@
                     </items>
                   </Menu>
                 <MenuItem mnemonicParsing="false" onAction="#expulserLocal" text="Expulser" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Faute" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Sortir joueur" />
+                  <MenuItem mnemonicParsing="false" text="Entrer joueur" />
               </items>
             </ContextMenu>
          </contextMenu>
@@ -200,15 +207,24 @@
                      </items>
                   </Menu>
                   <MenuItem mnemonicParsing="false" onAction="#expulserVisitor" text="Expulser" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Faute" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Sortir joueur" />
+                  <MenuItem mnemonicParsing="false" text="Entrer joueur" />
                </items>
             </ContextMenu>
          </contextMenu>
             </TableView>
-            <TableView fx:id="tableAdministration" layoutX="492.0" layoutY="239.0" prefHeight="255.0" prefWidth="404.0" stylesheets="@../backend/Tables_match.css" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
+            <TableView fx:id="tableAdministration" layoutX="492.0" layoutY="239.0" prefHeight="255.0" prefWidth="404.0" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
               <columns>
                 <TableColumn fx:id="colPoste" prefWidth="496.0" text="Poste" />
                   <TableColumn fx:id="colNameAdminstration" prefWidth="505.0" text="Nom" />
               </columns>
+         <stylesheets>
+            <URL value="@../backend/Tables_match.css" />
+            <URL value="@css/Tables_match.css" />
+         </stylesheets>
             </TableView>
             <Label alignment="CENTER" layoutX="492.0" layoutY="209.0" minHeight="21.0" prefHeight="30.0" prefWidth="404.0" style="-fx-background-color: #FFFFFF;" text=" Equipe technique" AnchorPane.leftAnchor="492.0" AnchorPane.rightAnchor="426.0">
                <font>

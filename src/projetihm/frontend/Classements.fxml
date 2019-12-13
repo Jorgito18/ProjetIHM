@@ -68,14 +68,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
                      <children>
-                        <TableView fx:id="tableStarligue" prefHeight="974.0" prefWidth="1176.0" stylesheets="@../backend/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="693.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableStarligue" prefHeight="974.0" prefWidth="1176.0" stylesheets="@css/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="693.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn fx:id="colNameStarligue" prefWidth="560.0" text="NOM EQUIPE" />
                               <TableColumn fx:id="colPtsStarligue" prefWidth="187.0" text="PTS" />
                               <TableColumn fx:id="colVictStarligue" minWidth="0.0" prefWidth="428.0" text="VICT" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablePlayers2" layoutX="814.0" prefHeight="974.0" prefWidth="600.0" stylesheets="@../backend/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tablePlayers2" layoutX="814.0" prefHeight="974.0" prefWidth="600.0" stylesheets="@css/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn fx:id="colPlayersTwo" prefWidth="317.0" text="Joueur" />
                               <TableColumn fx:id="colNumeroTwo" prefWidth="112.0" text="Numero" />
@@ -90,14 +90,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="1258.0">
                      <children>
-                        <TableView fx:id="tableProligue" layoutY="-1.0" prefHeight="975.0" prefWidth="1196.0" stylesheets="@../backend/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="-1.0">
+                        <TableView fx:id="tableProligue" layoutY="-1.0" prefHeight="975.0" prefWidth="1196.0" stylesheets="@css/Tables.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="673.0" AnchorPane.topAnchor="-1.0">
                            <columns>
                               <TableColumn fx:id="colNameProligue" prefWidth="609.0" text="NOM EQUIPE" />
                               <TableColumn fx:id="colPtsProligue" prefWidth="156.0" text="PTS" />
                               <TableColumn fx:id="colVictProligue" prefWidth="430.0" text="VICT" />
                            </columns>
                         </TableView>
-                        <TableView fx:id="tablePlayers" layoutX="1529.0" layoutY="-1.0" prefHeight="976.0" prefWidth="600.0" stylesheets="@../backend/Tables.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                        <TableView fx:id="tablePlayers" layoutX="1529.0" layoutY="-1.0" prefHeight="976.0" prefWidth="600.0" stylesheets="@css/Tables.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                            <columns>
                               <TableColumn fx:id="colPlayersOne" prefWidth="253.0" text="Joueur" />
                               <TableColumn fx:id="colNumeroOne" minWidth="0.0" prefWidth="112.0" text="Numero" />

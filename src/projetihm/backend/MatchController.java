@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -25,7 +27,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -44,8 +45,6 @@ import projetihm.backend.tables.TeamTableModel;
  * @author jaespes
  */
 public class MatchController implements Initializable {
-    public static final String LOGIN = "/projetihm/frontend/Login.fxml";
-    public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";
     final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
     private int localGoal = 0;
     private int visitorGoal = 0;
@@ -95,19 +94,27 @@ public class MatchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         labelTm.setVisible(false);
-        retrieveDataLocal("jdbc:sqlite:PROLIGUE_DB.db");
-        retrieveDataVisitor("jdbc:sqlite:PROLIGUE_DB.db");
-        retrieveAdministrationTable("jdbc:sqlite:PROLIGUE_DB.db");
+        List<TableColumn> columnsLocal = new ArrayList<>();
+        columnsLocal.add(localColName);
+        columnsLocal.add(localColinGame);
+        columnsLocal.add(localColNumber);
+        List<TableColumn> columnsVisitor = new ArrayList<>();
+        columnsVisitor.add(visitorColName);
+        columnsVisitor.add(visitorColinGame);
+        columnsVisitor.add(visitorColNumber);
+        retrieveData(Constants.TABLE_PARIS, columnsLocal, tableLocal);
+        retrieveData(Constants.TABLE_TOULOUSE, columnsVisitor, tableVisitor);
+        retrieveAdministrationTable(Constants.PROLIGUE_DRIVER_PATH);
     }
     
     @FXML
     public void openAsClassement() {
-        redirectFromMatch(CLASEMENTS);
+        redirectFromMatch(Constants.CLASEMENTS);
     }
     
     @FXML
     public void openAsLogin() {
-        redirectFromMatch(LOGIN);
+        redirectFromMatch(Constants.LOGIN);
     }
     
     @FXML
@@ -202,9 +209,9 @@ public class MatchController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Aide");
         alert.setHeaderText("Page d'accueil");
-        String s ="Le match en direct pour éffectuer la sauvegarde de statistiques à partir des données enregistrées. \n \n"
-                + "Contient des tableaux avec les joueurs des 2 equipes et les événements pour chacun. \n \n"
-                + "Permet de enregistrer les actions des joueurs dans le match tels que les buts ou les tirs";
+        String s ="Le match en direct pour effectuer la sauvegarde de statistiques a partir des donnees enregistrees."
+                + "Contient des tableaux avec les joueurs des 2 equipes et les événements pour chacun."
+                + "";
         alert.setContentText(s);
         alert.show();
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
@@ -286,14 +293,18 @@ public class MatchController implements Initializable {
             labelVisitorGoal.setText(String.valueOf(visitorGoal));
         }
     }
-    
-    public void retrieveDataLocal(String driverPath) {
+
+    public void retrieveData(String tableName, List<TableColumn> columns, TableView table) {
         ObservableList<TeamTableModel> list = FXCollections.observableArrayList();
+        List<String> columnNames = new ArrayList<>();
+        columnNames.add("name");
+        columnNames.add("number");
+        columnNames.add("inGame");
 
         /* establish connection */
-        try (Connection connection = DriverManager.getConnection(driverPath);
+        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:PROLIGUE_DB.db");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * from TABLE_PARIS")) {
+            ResultSet resultSet = statement.executeQuery("Select * from " + tableName)) {
 
             /* get data from database */
             while (resultSet.next()) {
@@ -306,41 +317,16 @@ public class MatchController implements Initializable {
         
         /* display retrieved data from database in TableView columns */
         try {
-            localColName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            localColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
-            localColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        tableLocal.setItems(list); 
-    }
-   
-    public void retrieveDataVisitor(String driverPath) {
-        ObservableList<TeamTableModel> list = FXCollections.observableArrayList();
-
-        try (Connection connection = DriverManager.getConnection(driverPath);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("Select * from TABLE_TOULOUSE")) {
-
-            while (resultSet.next()) {
-                list.add(new TeamTableModel(resultSet.getString("NOM"), resultSet.getInt("NUMERO"),
-                    resultSet.getString("EN_JEU"), resultSet.getString("CARTES")));
+            for (int i = 0; i < columns.size(); i++) {
+                columns.get(i).setCellValueFactory(new PropertyValueFactory<>(columnNames.get(i)));
             }
         } catch (Exception e) {
-                e.printStackTrace();
-        }
-        
-        try {
-            visitorColName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            visitorColNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
-            visitorColinGame.setCellValueFactory(new PropertyValueFactory<>("inGame"));
-        } catch (Exception e) {
             e.printStackTrace();
         }
-        tableVisitor.setItems(list); 
-    } 
-    
+        table.setItems(list); 
+    }
+   
+
     public void retrieveAdministrationTable(String driverPath) {
         ObservableList<AdministrationTableModel> list = FXCollections.observableArrayList();
 
@@ -368,15 +354,7 @@ public class MatchController implements Initializable {
     public void registerAction(TableView table, String actionType, TextFlow textFlow) {
         TeamTableModel team = (TeamTableModel) table.getSelectionModel().getSelectedItem();
         Text text = new Text(" № " +  + team.getNumber() + " " + team.getName() + " - " + minute.getText() + ":" + seconde.getText() + "\n");
-       
-        table.setRowFactory(tv -> new TableRow<TeamTableModel>() {
-        @Override
-        protected void updateItem(TeamTableModel item, boolean empty) {
-            super.updateItem(item, empty);
-            setStyle("-fx-background-color: #baffba;");
-            }
-        });
-        
+
         ImageView image = null;
         
         if (actionType.equalsIgnoreCase("yellowCard")) {
@@ -419,20 +397,5 @@ public class MatchController implements Initializable {
     public void expulserVisitor() {
         registerAction(tableVisitor, "expulsion", textFlowVisitor);
     }
-     
-    public void gatherGoalLocal() {
-        connectionImpl.insertData("STATS_PARIS", LOGIN, 0, 0, 0, 0, 0, 0);
-    }    
-        
-    public void gatherTirsLocal() {
-        
-    }
-        
-    public void gatherYellowCardsLocal() {
-        
-    }
-    
-    public void gatherRedCardsLoccal() {
-        
-    }
+
 }
