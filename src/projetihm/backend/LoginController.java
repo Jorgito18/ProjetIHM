@@ -1,10 +1,5 @@
 package projetihm.backend;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,7 +53,6 @@ public class LoginController {
 
             stage.setTitle("Association Française d'Handball");
             stage.setScene(new Scene(parent));
-            stage.setResizable(false);
             
             stage.show();
             stage.getIcons().add(new Image("projetihm/images/lnh-logo_petit.png"));

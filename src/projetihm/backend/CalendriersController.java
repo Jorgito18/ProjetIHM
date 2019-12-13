@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projetihm.backend;
 
 import java.net.URL;
@@ -18,11 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- * FXML Controller class
- *
- * @author Jorge Ara
- */
+
 public class CalendriersController implements Initializable {
     public static final String LOGIN = "/projetihm/frontend/Login.fxml";
     public static final String CLASEMENTS = "/projetihm/frontend/Classements.fxml";

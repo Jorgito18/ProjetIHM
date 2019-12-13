@@ -1,10 +1,5 @@
 package projetihm.backend;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.net.URL;
 import java.sql.Connection;
@@ -32,11 +27,7 @@ import javafx.stage.StageStyle;
 import projetihm.backend.tables.LigueTableModel;
 import projetihm.backend.tables.TablePlayers;
 
-/**
- * FXML Controller class
- *
- * @author Jorge Ara
- */
+
 public class ClassementsController implements Initializable {
     @FXML private TableView<LigueTableModel> tableProligue;
     @FXML private TableColumn<LigueTableModel, String> colNameProligue;

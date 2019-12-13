@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package projetihm.backend;
 
 import java.net.URL;
@@ -40,10 +36,6 @@ import projetihm.backend.sql.SqlConnectionImpl;
 import projetihm.backend.tables.AdministrationTableModel;
 import projetihm.backend.tables.TeamTableModel;
 
-/**
- *
- * @author jaespes
- */
 public class MatchController implements Initializable {
     final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
     private int localGoal = 0;
