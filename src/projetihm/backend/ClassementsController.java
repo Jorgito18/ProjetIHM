@@ -49,6 +49,7 @@ public class ClassementsController implements Initializable {
     @FXML private TableColumn<LigueTableModel, Integer> colVictStarligue;
     @FXML private ImageView retour;
     @FXML private ImageView toCalendriers;
+    @FXML private ImageView toStatistics;
     
     @FXML private TableView<TablePlayers> tablePlayers;
     @FXML private TableColumn<TablePlayers, String> colPlayersOne;

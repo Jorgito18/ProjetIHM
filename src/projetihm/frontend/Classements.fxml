@@ -120,7 +120,7 @@
             <Separator layoutX="-10.0" layoutY="12.0" prefHeight="3.0" prefWidth="62.0" />
          </children>
       </Pane>
-      <Label layoutX="1685.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="221.0" style="" text="Utilisateur: jan clop">
+      <Label layoutX="1616.0" layoutY="11.0" minHeight="11.000091552734375" prefHeight="36.0" prefWidth="290.0" style="" text="Utilisateur: Jean Clop">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
